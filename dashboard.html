@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | Paws & Bubbles</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  
+  <style>
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: calc(100vh - 80px); /* minus navbar */
+      padding-top: 80px; /* navbar height */
+    }
+    
+    .sidebar {
+      background-color: var(--surface);
+      border-right: 1px solid var(--border-color);
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .sidebar-menu {
+      list-style: none;
+      margin-top: 2rem;
+      flex-grow: 1;
+    }
+    
+    .sidebar-menu li a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      color: var(--text-main);
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      border-left: 3px solid transparent;
+    }
+    
+    .sidebar-menu li a:hover, .sidebar-menu li a.active {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      border-left-color: var(--primary);
+    }
+    
+    .dashboard-content {
+      padding: 3rem;
+      background-color: var(--bg-color);
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar { display: none; }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards;">
+    <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+      <i class="fas fa-paw"></i>
+      <span>Paws & Bubbles</span>
+    </a>
+    <ul class="nav-links" style="gap: 1.5rem;">
+      <li><a href="index.html" class="nav-link">Home 1</a></li>
+      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li><a href="index.html" class="nav-link">Log Out</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
+    </ul>
+    <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="#" class="active"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+        <li><a href="#"><i class="fas fa-dog"></i> My Pets</a></li>
+        <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+        <li><a href="#"><i class="fas fa-user"></i> Profile Settings</a></li>
+      </ul>
+      <div style="padding: 0 2rem;">
+        <a href="index.html" class="btn btn-outline" style="width: 100%;"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="dashboard-content fade-in-up">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h2>Welcome back, Alex!</h2>
+        <a href="booking.html" class="btn btn-primary"><i class="fas fa-plus"></i> New Booking</a>
+      </div>
+
+      <!-- Quick Stats / Rewards Overview -->
+      <div class="grid grid-3" style="margin-bottom: 3rem;">
+        <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color: white; border: none;">
+          <h4 style="color: rgba(255,255,255,0.8); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Loyalty Points</h4>
+          <div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 1rem 0;">
+            <span style="font-size: 2.5rem; font-weight: 800;">850</span>
+            <span style="font-size: 1rem; opacity: 0.8;">pts</span>
+          </div>
+          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.9);">150 more points until your next <strong>Free De-Shedding Treatment!</strong></p>
+          <div style="background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; margin-top: 1rem; overflow: hidden;">
+            <div style="background: white; width: 85%; height: 100%;"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase;">Next Appointment</h4>
+          <div style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
+            <div style="background: var(--primary-light); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius-sm); text-align: center;">
+              <div style="font-weight: 800; font-size: 1.25rem;">24</div>
+              <div style="font-size: 0.75rem; font-weight: 700;">MAR</div>
+            </div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: var(--text-main);">Full Makeover</p>
+              <p style="margin: 0; font-size: 0.875rem; color: var(--text-muted);">09:00 AM • Bella</p>
+            </div>
+          </div>
+          <a href="#" style="font-size: 0.875rem; font-weight: 700; color: var(--primary); text-decoration: none;">View Details →</a>
+        </div>
+
+        <div class="card" style="background: var(--surface-alt); border: 2px dashed var(--border-color); justify-content: center; align-items: center;">
+          <div class="text-center">
+            <i class="fas fa-gift" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;"></i>
+            <h4 style="margin: 0;">Refer a Friend</h4>
+            <p style="font-size: 0.75rem; margin: 0.25rem 0 0;">Get $20 off your next groom</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-2" style="gap: 2.5rem; align-items: start;">
+        <!-- Upcoming & History -->
+        <div>
+          <h3 style="margin-bottom: 1.5rem;">Recent Activity</h3>
+          
+          <div class="card" style="margin-bottom: 1rem; padding: 1.5rem; flex-direction: row; align-items: center; gap: 1.5rem;">
+            <div style="color: var(--text-muted); font-size: 1.25rem;"><i class="fas fa-check-circle text-primary"></i></div>
+            <div style="flex-grow: 1;">
+              <h4 style="margin: 0; font-size: 1rem;">Basic Bath & Brush</h4>
+              <p style="margin: 0; font-size: 0.875rem; color: var(--text-muted);">Completed • March 2, 2026</p>
+            </div>
+            <div style="font-weight: 800;">$65.00</div>
+          </div>
+
+          <div class="card" style="margin-bottom: 1rem; padding: 1.5rem; flex-direction: row; align-items: center; gap: 1.5rem;">
+            <div style="color: var(--text-muted); font-size: 1.25rem;"><i class="fas fa-check-circle text-primary"></i></div>
+            <div style="flex-grow: 1;">
+              <h4 style="margin: 0; font-size: 1rem;">Nail Grinding Add-on</h4>
+              <p style="margin: 0; font-size: 0.875rem; color: var(--text-muted);">Completed • Feb 15, 2026</p>
+            </div>
+            <div style="font-weight: 800;">$10.00</div>
+          </div>
+
+          <div class="card" style="padding: 1.5rem; flex-direction: row; align-items: center; gap: 1.5rem;">
+            <div style="color: var(--text-muted); font-size: 1.25rem;"><i class="fas fa-check-circle text-primary"></i></div>
+            <div style="flex-grow: 1;">
+              <h4 style="margin: 0; font-size: 1rem;">Full Grooming</h4>
+              <p style="margin: 0; font-size: 0.875rem; color: var(--text-muted);">Completed • Jan 20, 2026</p>
+            </div>
+            <div style="font-weight: 800;">$95.00</div>
+          </div>
+
+          <a href="#" style="display: block; text-align: center; margin-top: 1.5rem; font-weight: 700; font-size: 0.875rem;">Download All Invoices</a>
+        </div>
+
+        <!-- Health & Recs -->
+        <div>
+          <h3 style="margin-bottom: 1.5rem;">Personalized for Bella</h3>
+          <div class="card" style="background: var(--surface); border-left: 4px solid var(--accent); padding: 1.5rem; margin-bottom: 1.5rem;">
+            <h4 style="display: flex; align-items: center; gap: 0.5rem; color: var(--accent);"><i class="fas fa-exclamation-triangle"></i> Groomer's Note</h4>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">"Bella has some mild skin sensitivity near her paws. I recommend our <strong>Oatmeal Soothing Bath</strong> for her next visit to help with the itching."</p>
+            <button class="btn btn-outline" style="align-self: flex-start; margin-top: 1rem; font-size: 0.75rem; padding: 0.5rem 1rem;">Add to next booking</button>
+          </div>
+
+          <div class="card" style="padding: 1.5rem; background-color: var(--primary-light); border: none;">
+            <h4 style="color: var(--primary);">Service Alert</h4>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Groomer <strong>Sarah</strong> is visiting your neighborhood this Friday! Want to grab a last-minute spot for a quick nail trim?</p>
+            <a href="booking.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 1rem; font-size: 0.75rem; padding: 0.5rem 1rem;">Check Availability</a>
+          </div>
+        </div>
+      </div>
+      
+      <h2 style="margin: 4rem 0 1.5rem;">My Pets</h2>
+      <div class="grid grid-3">
+        <!-- Pet Card -->
+        <div class="card text-center" style="padding: 1.5rem;">
+          <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=150" alt="Bella" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; border: 4px solid var(--primary-light);">
+          <h3 style="margin: 0;">Bella</h3>
+          <p style="margin: 0 0 1rem; font-size: 0.875rem;">Poodle • 3 yrs</p>
+          <div style="background: var(--bg-color); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.875rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <i class="fas fa-bell text-accent"></i> Next Groom: Apr 15
+          </div>
+          <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
+             <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Edit</button>
+             <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Records</button>
+          </div>
+        </div>
+        
+        <!-- Add Pet -->
+        <div class="card text-center" style="padding: 1.5rem; border: 2px dashed var(--border-color); background: transparent; cursor: pointer; display: flex; justify-content: center; align-items: center; min-height: 250px;">
+          <div style="color: var(--text-muted);">
+            <i class="fas fa-plus-circle" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"></i>
+            <h3>Add a Pet</h3>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" style="padding: 4rem 0 2rem;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
+          <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Account</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Login Dashboard</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="coming-soon.html">Pet Profiles</a></li>
+            <li><a href="coming-soon.html">Rewards</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone text-primary" style="margin-right: 0.5rem;"></i> (555) 123-4567</li>
+            <li><i class="fas fa-envelope text-primary" style="margin-right: 0.5rem;"></i> hello@pawsandbubbles.com</li>
+            <li><i class="fas fa-map-marker-alt text-primary" style="margin-right: 0.5rem;"></i> Serving the Greater Metro Area</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Paws & Bubbles Mobile Grooming. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

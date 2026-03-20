@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Paws & Bubbles</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards;">
+    <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+      <i class="fas fa-paw"></i>
+      <span>Paws & Bubbles</span>
+    </a>
+    <ul class="nav-links" style="gap: 1.5rem;">
+      <li><a href="index.html" class="nav-link">Home 1</a></li>
+      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      <li>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li><a href="login.html" class="nav-link">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
+    </ul>
+    <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Header -->
+  <header class="section" style="padding-top: 8rem; background-color: var(--primary-light); text-align: center;">
+    <div class="container fade-in-up">
+      <span class="text-primary font-bold">GET IN TOUCH</span>
+      <h1>Contact Us</h1>
+      <p style="max-width: 600px; margin: 0 auto; font-size: 1.25rem;">
+        Have questions about our services or need help booking? We're here for you and your furry friend.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contact Grid -->
+  <section class="section">
+    <div class="container fade-in-up">
+      <div class="grid grid-2">
+        <!-- Form -->
+        <div class="card border-none" style="padding: 2.5rem; background: var(--surface);">
+          <h3 style="margin-bottom: 2rem; text-align: center;">Send a Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Message Sent!');">
+            <div class="grid grid-2" style="gap: 1.5rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-group" style="margin-top: 1.5rem;">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+        
+        <!-- Info & Map -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          <div class="card border-none" style="padding: 2rem; background: var(--primary-light);">
+            <h3 style="margin-bottom: 2rem; text-align: center;">Contact Information</h3>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center;">
+              <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                <i class="fas fa-envelope text-primary" style="font-size: 1.25rem;"></i>
+                <span style="font-weight: 600;">hello@pawsandbubbles.com</span>
+              </li>
+              <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                <i class="fas fa-phone text-primary" style="font-size: 1.25rem;"></i>
+                <span style="font-weight: 600;">(555) 123-4567</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: 1rem;">
+                <i class="fas fa-map-marker-alt text-primary" style="font-size: 1.25rem;"></i>
+                <span style="font-weight: 600;">Serving the Greater Metro Area</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Map Placeholder -->
+          <div class="card border-none" style="flex-grow: 1; padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #e2e8f0; min-height: 250px;">
+            <div style="text-align: center; color: var(--text-muted);">
+              <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+              <p style="margin: 0; font-weight: 700;">Service Area Map Placeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="padding: 4rem 0 2rem;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
+          <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Account</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Login Dashboard</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="coming-soon.html">Pet Profiles</a></li>
+            <li><a href="coming-soon.html">Rewards</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone text-primary" style="margin-right: 0.5rem;"></i> (555) 123-4567</li>
+            <li><i class="fas fa-envelope text-primary" style="margin-right: 0.5rem;"></i> hello@pawsandbubbles.com</li>
+            <li><i class="fas fa-map-marker-alt text-primary" style="margin-right: 0.5rem;"></i> Serving the Greater Metro Area</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Paws & Bubbles Mobile Grooming. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

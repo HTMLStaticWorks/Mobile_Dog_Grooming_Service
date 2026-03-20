@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Paws & Bubbles</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body style="height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
+
+  <!-- Navbar -->
+  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards;">
+    <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+      <i class="fas fa-paw"></i>
+      <span>Paws & Bubbles</span>
+    </a>
+    <ul class="nav-links" style="gap: 1.5rem;">
+      <li><a href="index.html" class="nav-link">Home 1</a></li>
+      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li><a href="login.html" class="nav-link">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
+    </ul>
+    <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- 404 Content -->
+  <section class="section" style="flex-grow: 1; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="container fade-in-up">
+      <div style="font-size: 8rem; color: var(--primary-light); margin-bottom: 1rem;">
+        <i class="fas fa-dog"></i>
+      </div>
+      <h1 style="font-size: 4rem; color: var(--primary); margin-bottom: 0.5rem;">404</h1>
+      <h2 style="margin-bottom: 1.5rem;">Oops! You've strayed too far from the park.</h2>
+      <p style="font-size: 1.25rem; max-width: 500px; margin: 0 auto 2rem;">
+        We can't seem to find the page you're looking for. It might have been moved or deleted.
+      </p>
+      <a href="index.html" class="btn btn-primary" style="padding: 1rem 3rem;"><i class="fas fa-home"></i> Back to Homepage</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="padding: 4rem 0 2rem;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
+          <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Account</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Login Dashboard</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="coming-soon.html">Pet Profiles</a></li>
+            <li><a href="coming-soon.html">Rewards</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone text-primary" style="margin-right: 0.5rem;"></i> (555) 123-4567</li>
+            <li><i class="fas fa-envelope text-primary" style="margin-right: 0.5rem;"></i> hello@pawsandbubbles.com</li>
+            <li><i class="fas fa-map-marker-alt text-primary" style="margin-right: 0.5rem;"></i> Serving the Greater Metro Area</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Paws & Bubbles Mobile Grooming. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

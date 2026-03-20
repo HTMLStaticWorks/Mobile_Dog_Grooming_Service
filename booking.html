@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment | Paws & Bubbles</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    .wizard-step { display: none; }
+    .wizard-step.active { display: block; animation: fadeIn 0.5s ease; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .progress-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--border-color);
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+    
+    .progress-bar-fill {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 4px;
+      background: var(--primary);
+      z-index: 2;
+      transform: translateY(-50%);
+      transition: width 0.3s ease;
+    }
+    
+    .progress-step {
+      width: 40px;
+      height: 40px;
+      background: var(--surface);
+      border: 4px solid var(--border-color);
+      border-radius: 50%;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+    
+    .progress-step.active {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    .progress-step.completed {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards;">
+    <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+      <i class="fas fa-paw"></i>
+      <span>Paws & Bubbles</span>
+    </a>
+    <ul class="nav-links" style="gap: 1.5rem;">
+      <li><a href="index.html" class="nav-link">Home 1</a></li>
+      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li><a href="login.html" class="nav-link">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
+    </ul>
+    <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Booking Container -->
+  <section class="section" style="padding-top: 8rem; min-height: 100vh; background-color: var(--bg-color);">
+    <div class="container" style="max-width: 800px;">
+      
+      <div class="card fade-in-up" style="padding: 3rem;">
+        <h2 class="text-center" style="margin-bottom: 2rem;">Book Your Spa Day</h2>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+          <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+          <div class="progress-step active" id="step1-indicator">1</div>
+          <div class="progress-step" id="step2-indicator">2</div>
+          <div class="progress-step" id="step3-indicator">3</div>
+        </div>
+        
+        <form id="booking-form">
+          <!-- Step 1: Pet Details -->
+          <div class="wizard-step active" id="step-1">
+            <h3 style="margin-bottom: 1.5rem;">Tell us about your pet</h3>
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Pet Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Bella" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Breed</label>
+                <input type="text" class="form-control" placeholder="e.g. Golden Retriever" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Size/Weight</label>
+                <select class="form-control" required>
+                  <option value="">Select Size</option>
+                  <option value="small">Small (0-20 lbs)</option>
+                  <option value="medium">Medium (21-40 lbs)</option>
+                  <option value="large">Large (41+ lbs)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Age</label>
+                <input type="number" class="form-control" placeholder="Years" min="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Select Package</label>
+              <select class="form-control" required>
+                <option value="">Select a Grooming Package</option>
+                <option value="basic">Basic Bath (From $65)</option>
+                <option value="full">The Full Makeover (From $95)</option>
+                <option value="puppy">Puppy Spa (From $55)</option>
+              </select>
+            </div>
+            <div style="text-align: right; margin-top: 2rem;">
+              <button type="button" class="btn btn-primary next-btn" data-next="2">Next Step <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+          
+          <!-- Step 2: Date & Time -->
+          <div class="wizard-step" id="step-2">
+            <h3 style="margin-bottom: 1.5rem;">Choose a Date & Time</h3>
+            <div class="form-group">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" class="form-control" id="booking-date" required>
+            </div>
+            
+            <label class="form-label" style="margin-top: 1.5rem;">Available Times</label>
+            <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+              <label style="display: block; cursor: pointer;">
+                <input type="radio" name="time" value="09:00 AM" style="display: none;">
+                <div class="card border-none text-center time-slot" style="padding: 1rem; border: 2px solid var(--border-color);">09:00 AM</div>
+              </label>
+              <label style="display: block; cursor: pointer;">
+                <input type="radio" name="time" value="11:30 AM" style="display: none;">
+                <div class="card border-none text-center time-slot" style="padding: 1rem; border: 2px solid var(--border-color);">11:30 AM</div>
+              </label>
+              <label style="display: block; cursor: pointer;">
+                <input type="radio" name="time" value="02:00 PM" style="display: none;">
+                <div class="card border-none text-center time-slot" style="padding: 1rem; border: 2px solid var(--border-color);">02:00 PM</div>
+              </label>
+              <label style="display: block; cursor: pointer;">
+                <input type="radio" name="time" value="04:30 PM" style="display: none;">
+                <div class="card border-none text-center time-slot" style="padding: 1rem; border: 2px solid var(--border-color);">04:30 PM</div>
+              </label>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+              <button type="button" class="btn btn-outline prev-btn" data-prev="1"><i class="fas fa-arrow-left"></i> Back</button>
+              <button type="button" class="btn btn-primary next-btn" data-next="3">Next Step <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+          
+          <!-- Step 3: Contact Info -->
+          <div class="wizard-step" id="step-3">
+            <h3 style="margin-bottom: 1.5rem;">Your Details</h3>
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Home Address (For Mobile Van)</label>
+              <input type="text" class="form-control" placeholder="Street Address" required style="margin-bottom: 0.5rem;">
+              <div class="grid grid-2">
+                <input type="text" class="form-control" placeholder="City" required>
+                <input type="text" class="form-control" placeholder="Zip Code" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Special Instructions (Optional)</label>
+              <textarea class="form-control" rows="3" placeholder="Any gating codes or specific pet behavioral notes?"></textarea>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+              <button type="button" class="btn btn-outline prev-btn" data-prev="2"><i class="fas fa-arrow-left"></i> Back</button>
+              <button type="submit" class="btn btn-accent"><i class="fas fa-check"></i> Confirm Booking</button>
+            </div>
+          </div>
+          
+          <!-- Success Message -->
+          <div class="wizard-step text-center" id="step-success" style="padding: 4rem 2rem;">
+            <div style="font-size: 5rem; color: var(--primary); margin-bottom: 1.5rem;">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p style="font-size: 1.25rem;">We'll see you and your furry friend soon.<br>A confirmation email has been sent.</p>
+            <a href="login.html" class="btn btn-primary" style="margin-top: 2rem;">Go to Dashboard</a>
+          </div>
+          
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="padding: 4rem 0 2rem;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
+          <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Account</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Login Dashboard</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="coming-soon.html">Pet Profiles</a></li>
+            <li><a href="coming-soon.html">Rewards</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone text-primary" style="margin-right: 0.5rem;"></i> (555) 123-4567</li>
+            <li><i class="fas fa-envelope text-primary" style="margin-right: 0.5rem;"></i> hello@pawsandbubbles.com</li>
+            <li><i class="fas fa-map-marker-alt text-primary" style="margin-right: 0.5rem;"></i> Serving the Greater Metro Area</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Paws & Bubbles Mobile Grooming. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>
