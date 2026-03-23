@@ -228,13 +228,13 @@
   <section class="section">
     <div class="container">
       <div class="grid grid-2" style="align-items: center; margin-bottom: 3rem;">
-        <div class="fade-in-up order-tablet-1" style="text-align: center;">
-          <a href="services.html" class="btn btn-outline">View All Pricing</a>
-        </div>
         <div class="fade-in-up order-tablet-2">
           <span class="text-primary font-bold">OUR PACKAGES</span>
           <h2>Tail-wagging Services</h2>
           <p>From simple baths to full styling, we offer packages tailored to every breed and coat type.</p>
+        </div>
+        <div class="fade-in-up order-tablet-1" style="text-align: center;">
+          <a href="services.html" class="btn btn-outline">View All Pricing</a>
         </div>
       </div>
       
@@ -338,14 +338,40 @@
       <span class="text-primary font-bold">OUR PORTFOLIO</span>
       <h2 style="margin-bottom: 3rem;">Gorgeous Transformations</h2>
     </div>
-    <div class="hide-scrollbar" style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 2rem 2.5rem 2rem; scroll-behavior: smooth; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
-      <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 1" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 2" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 3" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 4" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 5" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="https://images.unsplash.com/photo-1625316708582-7c38734be31d?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 6" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <div class="slider-wrapper">
+      <button class="slider-btn prev" id="slider-prev" aria-label="Previous Gallary"><i class="fas fa-chevron-left"></i></button>
+      <div class="hide-scrollbar" id="portfolio-slider" style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 2rem 2.5rem 2rem; scroll-behavior: smooth; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 1" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 2" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 3" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 4" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 5" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://images.unsplash.com/photo-1625316708582-7c38734be31d?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 6" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <button class="slider-btn next" id="slider-next" aria-label="Next Gallary"><i class="fas fa-chevron-right"></i></button>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.getElementById('portfolio-slider');
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
+        
+        if (slider && prevBtn && nextBtn) {
+          const scrollAmount = 300;
+          
+          nextBtn.addEventListener('click', () => {
+            const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            slider.scrollBy({ left: isRTL ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+          });
+          
+          prevBtn.addEventListener('click', () => {
+            const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            slider.scrollBy({ left: isRTL ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+          });
+        }
+      });
+    </script>
   </section>
 
   <!-- FAQ Section -->

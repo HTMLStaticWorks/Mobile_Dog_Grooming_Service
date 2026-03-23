@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const userDir = localStorage.getItem('dir');
 
   const setDir = (dir) => {
+    if (document.documentElement.hasAttribute('data-no-rtl')) {
+      document.documentElement.setAttribute('dir', 'ltr');
+      return;
+    }
     document.documentElement.setAttribute('dir', dir);
     localStorage.setItem('dir', dir);
     if (rtlToggle) {
@@ -49,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (userDir) {
     setDir(userDir);
+  } else if (document.documentElement.hasAttribute('data-no-rtl')) {
+    setDir('ltr');
   }
 
   if (rtlToggle) {
