@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Dashboard | Paws & Bubbles</title>
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/animations.css">
@@ -24,12 +24,13 @@
       padding: 2rem 0;
       display: flex;
       flex-direction: column;
+      height: fit-content;
+      border-radius: 0 0 var(--radius-lg) 0;
     }
     
     .sidebar-menu {
       list-style: none;
       margin-top: 2rem;
-      flex-grow: 1;
     }
     
     .sidebar-menu li a {
@@ -66,27 +67,12 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards;">
+  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards; background: none; border: none; box-shadow: none; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; width: 100%;">
     <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
       <i class="fas fa-paw"></i>
       <span>Paws & Bubbles</span>
     </a>
-    <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link">Home 2</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
-          <i class="fas fa-moon"></i>
-        </button>
-      </li>
-      <li><a href="index.html" class="nav-link">Log Out</a></li>
-      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
-      <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
-    </ul>
-    <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 35px; height: 35px; font-size: 0.8rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">RTL</button>
   </nav>
 
   <!-- Dashboard -->
@@ -99,8 +85,8 @@
         <li><a href="#"><i class="fas fa-history"></i> History</a></li>
         <li><a href="#"><i class="fas fa-user"></i> Profile Settings</a></li>
       </ul>
-      <div style="padding: 0 2rem;">
-        <a href="index.html" class="btn btn-outline" style="width: 100%;"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+      <div style="padding: 0 2rem; margin-top: 4rem;">
+        <a href="index.html" class="btn btn-outline" style="width: 100%; border-radius: 50px;"><i class="fas fa-sign-out-alt"></i> Log Out</a>
       </div>
     </aside>
     
@@ -228,56 +214,7 @@
     </main>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer" style="padding: 4rem 0 2rem;">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
-          <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="footer-title">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index2.html">Home 2</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services & Pricing</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="footer-title">Account</h4>
-          <ul class="footer-links">
-            <li><a href="dashboard.html">Login Dashboard</a></li>
-            <li><a href="booking.html">Book Appointment</a></li>
-            <li><a href="coming-soon.html">Pet Profiles</a></li>
-            <li><a href="coming-soon.html">Rewards</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="footer-title">Contact</h4>
-          <ul class="footer-links">
-            <li><i class="fas fa-phone text-primary" style="margin-right: 0.5rem;"></i> (555) 123-4567</li>
-            <li><i class="fas fa-envelope text-primary" style="margin-right: 0.5rem;"></i> hello@pawsandbubbles.com</li>
-            <li><i class="fas fa-map-marker-alt text-primary" style="margin-right: 0.5rem;"></i> Serving the Greater Metro Area</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 Paws & Bubbles Mobile Grooming. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+
 
   <script src="assets/js/main.js"></script>
 </body>

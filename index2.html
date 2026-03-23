@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paws & Bubbles | Premium Mobile Dog Spa</title>
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 
   <style>
+    .app-button {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .app-button:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6) !important;
+      background: #f8fafc !important;
+    }
+    .app-button:active {
+      transform: translateY(-2px) scale(0.98);
+    }
     /* Specific styles for Home 2 to make it ultra-attractive */
     .hero-v2 {
       position: relative;
@@ -25,11 +36,11 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(90deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0) 100%);
+      background: rgba(15, 23, 42, 0.4);
     }
 
     [data-theme="dark"] .hero-v2::before {
-      background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 0.2) 100%);
+      background: rgba(15, 23, 42, 0.7);
     }
 
     .glassmorphism-card {
@@ -141,10 +152,6 @@
     .stylist-card {
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       border: 1px solid var(--border-color);
-      border-top: 5px solid var(--accent);
-    }
-    .stylist-card.primary-border {
-      border-top: 5px solid var(--primary);
     }
     .stylist-card:hover {
       transform: translateY(-12px);
@@ -209,6 +216,22 @@
       z-index: 10;
     }
 
+    @media (max-width: 768px) {
+      .hero-v2 h1 {
+        font-size: 3rem !important;
+      }
+      .zero-stress-badge {
+        right: 10px !important;
+        top: 10px !important;
+        padding: 1.5rem !important;
+        font-size: 1rem !important;
+      }
+      .app-cta-bg {
+        width: 100% !important;
+        opacity: 0.15 !important;
+        background-position: right center !important;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -231,6 +254,11 @@
           <i class="fas fa-moon"></i>
         </button>
       </li>
+      <li>
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+          RTL
+        </button>
+      </li>
       <li><a href="login.html" class="nav-link">Log In</a></li>
       <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
       <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
@@ -239,14 +267,14 @@
   </nav>
 
   <!-- Advanced Hero Section -->
-  <header class="hero-v2" style="background: url('https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat; align-items: flex-end; padding-bottom: 4rem;">
-    <div class="container fade-in-up">
-      <div style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); padding: 3rem; border-radius: 20px; border-left: 6px solid var(--accent); max-width: 800px; color: white;">
-        <h1 style="font-size: 4.5rem; line-height: 1; margin-bottom: 1rem; text-transform: uppercase; font-weight: 900; letter-spacing: -2px;">Unleash<br>Their Best.</h1>
-        <p style="font-size: 1.5rem; margin-bottom: 2rem; max-width: 600px;">Exclusive driveway grooming for VIPs (Very Important Pets). Modern styling meets unparalleled convenience.</p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="booking.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 4px;">Book a Session</a>
-          <a href="#fleet" class="btn btn-outline" style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 4px; color: white; border-color: white;">Explore Our Fleet</a>
+  <header class="hero-v2" style="background: url('https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&q=80&w=2000') center 20%/cover no-repeat; align-items: center; padding-bottom: 0;">
+    <div class="container fade-in-up" style="display: flex; justify-content: center;">
+      <div style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); padding: 4rem 2rem; border-radius: 20px; max-width: 1000px; width: 100%; text-align: center;">
+        <h1 style="color: white !important; font-size: 5rem; line-height: 1.1; margin-bottom: 1rem; text-transform: uppercase; font-weight: 900; letter-spacing: -2px;">Unleash<br>Their Best.</h1>
+        <p style="color: white !important; font-size: 1.5rem; margin: 0 auto 2.5rem auto; max-width: 800px;">Exclusive driveway grooming for VIPs (Very Important Pets). Modern styling meets unparalleled convenience.</p>
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+          <a href="booking.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.25rem; border-radius: 8px; color: white !important;">Book a Session</a>
+          <a href="#fleet" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.25rem; border-radius: 8px; color: white !important; border-color: white; background: rgba(0,0,0,0.3);">Explore Our Fleet</a>
         </div>
       </div>
     </div>
@@ -285,7 +313,7 @@
         </div>
         <div class="fade-in-up delay-200" style="position: relative;">
           <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=800" style="border-radius: 20px; box-shadow: var(--shadow-xl); width: 100%; border: 4px solid var(--surface-alt);" alt="High tech van interior">
-          <div style="position: absolute; top: -30px; right: -30px; background: var(--primary); color: white; padding: 2.5rem; border-radius: 50%; font-weight: 800; font-size: 1.2rem; transform: rotate(15deg); box-shadow: var(--shadow-md);">Zero<br>Stress</div>
+          <div class="zero-stress-badge" style="position: absolute; top: -30px; right: -30px; background: var(--primary); color: white; padding: 2.5rem; border-radius: 50%; font-weight: 800; font-size: 1.2rem; transform: rotate(15deg); box-shadow: var(--shadow-md); z-index: 5;">Zero<br>Stress</div>
         </div>
       </div>
     </div>
@@ -303,31 +331,31 @@
       <div class="grid grid-3" style="gap: 2rem;">
         <!-- Upgrade 1 -->
         <div class="card fade-in-up delay-100" style="border: none; box-shadow: var(--shadow-md); padding: 0; overflow: hidden;">
-          <div style="height: 200px; background: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=600') center/cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="padding: 2rem; position: relative; background: var(--surface); z-index: 2;">
+          <div style="height: 280px; background: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=600') center 20%/cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="padding: 2rem; position: relative; background: var(--surface); z-index: 2; display: flex; flex-direction: column; flex-grow: 1;">
             <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">Blueberry Facial <span style="color: var(--primary); font-size: 1.25rem;">+$15</span></h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A tearless, aromatherapeutic optical brightener that gently removes tear stains and dirt while relaxing your pet.</p>
-            <a href="booking.html" class="text-accent font-bold" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">Add to Booking <i class="fas fa-arrow-right"></i></a>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1;">A tearless, aromatherapeutic optical brightener that gently removes tear stains and dirt while relaxing your pet.</p>
+            <a href="booking.html" class="text-accent font-bold" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">Add to Booking <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Upgrade 2 -->
         <div class="card fade-in-up delay-200" style="border: none; box-shadow: var(--shadow-md); padding: 0; overflow: hidden;">
-          <div style="height: 200px; background: url('https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&q=80&w=600') center/cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="padding: 2rem; position: relative; background: var(--surface); z-index: 2;">
+          <div style="height: 280px; background: url('https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&q=80&w=600') center 70%/cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="padding: 2rem; position: relative; background: var(--surface); z-index: 2; display: flex; flex-direction: column; flex-grow: 1;">
             <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">Pawdicure & Balm <span style="color: var(--primary); font-size: 1.25rem;">+$20</span></h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A soothing paw soak followed by a restorative, organic shea butter balm massage to heal cracked, dry pads.</p>
-            <a href="booking.html" class="text-accent font-bold" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">Add to Booking <i class="fas fa-arrow-right"></i></a>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1;">A soothing paw soak followed by a restorative, organic shea butter balm massage to heal cracked, dry pads.</p>
+            <a href="booking.html" class="text-accent font-bold" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">Add to Booking <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Upgrade 3 -->
         <div class="card fade-in-up delay-300" style="border: none; box-shadow: var(--shadow-md); padding: 0; overflow: hidden;">
-          <div style="height: 200px; background: url('https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&q=80&w=600') center/cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="padding: 2rem; position: relative; background: var(--surface); z-index: 2;">
+          <div style="height: 280px; background: url('https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&q=80&w=600') center 20%/cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="padding: 2rem; position: relative; background: var(--surface); z-index: 2; display: flex; flex-direction: column; flex-grow: 1;">
             <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">Dead Sea Mud <span style="color: var(--primary); font-size: 1.25rem;">+$35</span></h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A mineral-rich, deep-conditioning treatment that rapidly relieves dry, itchy skin and vigorously promotes a shiny coat.</p>
-            <a href="booking.html" class="text-accent font-bold" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">Add to Booking <i class="fas fa-arrow-right"></i></a>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1;">A mineral-rich, deep-conditioning treatment that rapidly relieves dry, itchy skin and vigorously promotes a shiny coat.</p>
+            <a href="booking.html" class="text-accent font-bold" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">Add to Booking <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -369,30 +397,22 @@
     </div>
   </section>
 
-  <!-- Transformation Gallery -->
-  <section style="background: #111; overflow: hidden;">
-    <div style="display: flex; width: 100%; height: 400px;">
-      <div style="flex: 1; min-width: 250px; background: url('https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&q=80&w=800') center/cover;" class="gallery-hover"></div>
-      <div style="flex: 1; min-width: 250px; background: url('https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&q=80&w=800') center/cover;" class="gallery-hover"></div>
-      <div style="flex: 1; min-width: 250px; background: url('https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&q=80&w=800') center/cover;" class="gallery-hover"></div>
-      <div style="flex: 1; min-width: 250px; background: url('https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?auto=format&fit=crop&q=80&w=800') center/cover;" class="gallery-hover"></div>
-    </div>
-  </section>
+
 
   <!-- Download App CTA -->
   <section class="section" style="background: var(--surface);">
     <div class="container fade-in-up">
       <div style="background: #0f172a; border-radius: 30px; padding: 4rem 2rem; position: relative; overflow: hidden; color: white;">
-        <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000') center/cover; opacity: 0.3; mask-image: linear-gradient(to right, transparent, black); -webkit-mask-image: linear-gradient(to right, transparent, black);"></div>
+        <div class="app-cta-bg" style="position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000') center/cover; opacity: 0.3; mask-image: linear-gradient(to right, transparent, black); -webkit-mask-image: linear-gradient(to right, transparent, black);"></div>
         <div style="position: relative; z-index: 2; max-width: 600px; padding: 2rem;">
           <div class="zig-zag-badge" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 2rem;"><i class="fas fa-mobile-alt"></i> Download The App</div>
-          <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1;">Manage bookings from your pocket.</h2>
+          <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; color: #ffffff !important;">Manage bookings from your pocket.</h2>
           <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem;">Download the Paws & Bubbles app to book instantly, track your groomer via GPS, view live paw-cam streams, and earn loyalty rewards.</p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="#" style="background: white; color: black; padding: 1rem 2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.1rem; transition: transform 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            <a href="#" class="app-button" style="background: white; color: black; padding: 1rem 2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
               <i class="fab fa-apple" style="font-size: 1.5rem;"></i> App Store
             </a>
-            <a href="#" style="background: white; color: black; padding: 1rem 2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.1rem; transition: transform 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            <a href="#" class="app-button" style="background: white; color: black; padding: 1rem 2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
               <i class="fab fa-google-play" style="font-size: 1.5rem;"></i> Google Play
             </a>
           </div>
@@ -408,10 +428,10 @@
         <div>
           <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
           <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
           </div>
         </div>
         

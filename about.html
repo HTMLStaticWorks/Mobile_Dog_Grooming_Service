@@ -6,7 +6,7 @@
   <title>About Us | Paws & Bubbles Mobile Grooming</title>
   <meta name="description" content="Learn about our certified mobile dog groomers. We bring a safe, stress-free grooming experience to your home.">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/animations.css">
@@ -31,6 +31,11 @@
       <li>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li>
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+          RTL
         </button>
       </li>
       <li><a href="login.html" class="nav-link">Log In</a></li>
@@ -185,31 +190,31 @@
   </section>
 
   <!-- Meet the Experts -->
-  <section class="section">
+  <section class="section" style="background-color: #0f172a; color: white;">
     <div class="container">
       <div class="section-title fade-in-up text-center">
-        <h2>Passionate Pet People</h2>
-        <p style="max-width: 600px; margin: 0 auto;">Our team is comprised of lifelong animal lovers who happen to be world-class artists. Every stylist is fully insured and pet-CPR certified.</p>
+        <h2 style="color: white;">Passionate Pet People</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.7);">Our team is comprised of lifelong animal lovers who happen to be world-class artists. Every stylist is fully insured and pet-CPR certified.</p>
       </div>
       
       <div class="grid grid-3" style="gap: 2rem; margin-top: 3rem;">
         <div class="fade-in-up text-center">
-          <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 4px solid var(--primary-light);" alt="Team Lead">
-          <h3 style="margin-bottom: 0.25rem;">Jamie Chen</h3>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 4px solid rgba(255,255,255,0.1); display: block;" alt="Team Lead">
+          <h3 style="margin-bottom: 0.25rem; color: white;">Jamie Chen</h3>
           <p class="text-primary font-bold" style="margin-bottom: 1rem;">Founder & Senior Stylist</p>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">After 15 years in static salons, Jamie founded Paws & Bubbles to provide a more humane, one-on-one grooming experience.</p>
+          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6);">After 15 years in static salons, Jamie founded Paws & Bubbles to provide a more humane, one-on-one grooming experience.</p>
         </div>
         <div class="fade-in-up delay-100 text-center">
-          <img src="https://images.unsplash.com/photo-1544168190-79c17527004f?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 4px solid var(--primary-light);" alt="Lead Groomer">
-          <h3 style="margin-bottom: 0.25rem;">Lucas Miller</h3>
+          <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 4px solid rgba(255,255,255,0.1); display: block;" alt="Lead Groomer">
+          <h3 style="margin-bottom: 0.25rem; color: white;">Lucas Miller</h3>
           <p class="text-primary font-bold" style="margin-bottom: 1rem;">Lead Tech & Senior Groomer</p>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">Lucas is our large-breed expert and ensures our fleet's high-tech systems are always in peak condition for our furry clients.</p>
+          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6);">Lucas is our large-breed expert and ensures our fleet's high-tech systems are always in peak condition for our furry clients.</p>
         </div>
         <div class="fade-in-up delay-200 text-center">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 4px solid var(--primary-light);" alt="Cat Specialist">
-          <h3 style="margin-bottom: 0.25rem;">Samantha Reed</h3>
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 4px solid rgba(255,255,255,0.1); display: block;" alt="Cat Specialist">
+          <h3 style="margin-bottom: 0.25rem; color: white;">Samantha Reed</h3>
           <p class="text-primary font-bold" style="margin-bottom: 1rem;">Senior Groomer & Cat Lead</p>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">Samantha brings a quiet, calming energy to every spa session, specializing in feline grooming and senior pet care.</p>
+          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6);">Samantha brings a quiet, calming energy to every spa session, specializing in feline grooming and senior pet care.</p>
         </div>
       </div>
     </div>
@@ -249,10 +254,10 @@
         <div>
           <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
           <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
           </div>
         </div>
         

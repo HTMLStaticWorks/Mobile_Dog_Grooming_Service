@@ -34,6 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
   themeCheck();
 
   /* -----------------
+   * RTL Toggle 
+   * ----------------- */
+  const rtlToggle = document.getElementById('rtl-toggle');
+  const userDir = localStorage.getItem('dir');
+
+  const setDir = (dir) => {
+    document.documentElement.setAttribute('dir', dir);
+    localStorage.setItem('dir', dir);
+    if (rtlToggle) {
+      rtlToggle.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    }
+  };
+
+  if (userDir) {
+    setDir(userDir);
+  }
+
+  if (rtlToggle) {
+    rtlToggle.addEventListener('click', () => {
+      const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+      setDir(currentDir === 'rtl' ? 'ltr' : 'rtl');
+    });
+  }
+
+  /* -----------------
    * Sticky Navbar
    * ----------------- */
   const navbar = document.querySelector('.navbar');
@@ -107,4 +132,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const elementsToAnimate = document.querySelectorAll('.fade-in-up, .scale-in');
   elementsToAnimate.forEach(el => observer.observe(el));
+
+  /* -----------------
+   * Scroll to Top Button
+   * ----------------- */
+  const scrollTop = document.createElement('button');
+  scrollTop.classList.add('scroll-top');
+  scrollTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  scrollTop.setAttribute('aria-label', 'Scroll to Top');
+  document.body.appendChild(scrollTop);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTop.classList.add('active');
+    } else {
+      scrollTop.classList.remove('active');
+    }
+  });
+
+  scrollTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });

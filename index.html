@@ -7,7 +7,7 @@
   <meta name="description" content="Book professional, stress-free mobile dog grooming services straight to your home. Certified groomers, premium products, happy pets.">
   
   <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/index.css">
@@ -32,6 +32,11 @@
       <li>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li>
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          RTL
         </button>
       </li>
       <li><a href="login.html" class="nav-link">Log In</a></li>
@@ -175,10 +180,10 @@
     <div class="container">
       <div class="grid grid-2" style="align-items: center; gap: 4rem;">
         <div class="fade-in-up delay-100" style="position: relative;">
-          <div style="position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; background: var(--primary-light); border-radius: 50%; z-index: 0;"></div>
+          <div class="decorative-blob" style="position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; background: var(--primary-light); border-radius: 50%; z-index: 0;"></div>
           <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=800" alt="Beautiful Pitbull after Mobile Grooming" style="border-radius: var(--radius-lg); width: 100%; box-shadow: var(--shadow-lg); position: relative; z-index: 1;">
           
-          <div class="card hover-wiggle" style="position: absolute; bottom: 30px; left: -20px; padding: 1rem 1.5rem; background: var(--surface); z-index: 2; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem;">
+          <div class="card hover-wiggle climate-badge" style="position: absolute; bottom: 30px; left: -20px; padding: 1rem 1.5rem; background: var(--surface); z-index: 2; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem;">
             <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-temperature-high"></i></div>
             <div>
               <h4 style="margin: 0; font-size: 0.875rem;">Climate Controlled</h4>
@@ -223,20 +228,20 @@
   <section class="section">
     <div class="container">
       <div class="grid grid-2" style="align-items: center; margin-bottom: 3rem;">
-        <div class="fade-in-up">
+        <div class="fade-in-up order-tablet-1" style="text-align: center;">
+          <a href="services.html" class="btn btn-outline">View All Pricing</a>
+        </div>
+        <div class="fade-in-up order-tablet-2">
           <span class="text-primary font-bold">OUR PACKAGES</span>
           <h2>Tail-wagging Services</h2>
           <p>From simple baths to full styling, we offer packages tailored to every breed and coat type.</p>
-        </div>
-        <div class="fade-in-up text-center" style="text-align: right;">
-          <a href="services.html" class="btn btn-outline">View All Pricing</a>
         </div>
       </div>
       
       <div class="grid grid-3">
         <!-- Basic Bath -->
         <div class="card fade-in-up delay-100">
-          <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&q=80&w=600&h=400" alt="Basic Bath" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 200px; object-fit: cover; display: block;">
+          <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&q=80&w=600&h=400" alt="Basic Bath" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 250px; object-fit: cover; object-position: center 20%; display: block;">
           <h3 class="card-title">Squeaky Clean Bath</h3>
           <p>Perfect for between haircuts to keep your pup smelling fresh.</p>
           <ul style="list-style: none; margin-bottom: 1.5rem; flex-grow: 1;">
@@ -253,7 +258,7 @@
         <!-- Full Groom (Premium) -->
         <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative;">
           <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.25rem 1rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">MOST POPULAR</div>
-          <img src="https://images.unsplash.com/photo-1625316708582-7c38734be31d?auto=format&fit=crop&q=80&w=600&h=400" alt="Full Groom" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 200px; object-fit: cover; display: block;">
+          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=600&h=400" alt="Full Stylist" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 250px; object-fit: cover; object-position: center 20%; display: block;">
           <h3 class="card-title">The Full Makeover</h3>
           <p>A complete spa day including customized breed-specific styling.</p>
           <ul style="list-style: none; margin-bottom: 1.5rem; flex-grow: 1;">
@@ -270,7 +275,7 @@
 
         <!-- Spa Extra -->
         <div class="card fade-in-up delay-300">
-           <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600&h=400" alt="Puppy Spa" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 200px; object-fit: cover; display: block;">
+           <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600&h=400" alt="Puppy Spa" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 250px; object-fit: cover; object-position: center 20%; display: block;">
           <h3 class="card-title">Puppy's First Spa</h3>
           <p>Gentle introduction to grooming for puppies under 6 months.</p>
           <ul style="list-style: none; margin-bottom: 1.5rem; flex-grow: 1;">
@@ -333,7 +338,7 @@
       <span class="text-primary font-bold">OUR PORTFOLIO</span>
       <h2 style="margin-bottom: 3rem;">Gorgeous Transformations</h2>
     </div>
-    <div style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 2rem 2.5rem 2rem; scroll-behavior: smooth; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+    <div class="hide-scrollbar" style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 2rem 2.5rem 2rem; scroll-behavior: smooth; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
       <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 1" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
       <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 2" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
       <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 3" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
@@ -385,10 +390,10 @@
         <div>
           <a href="index.html" class="footer-brand"><i class="fas fa-paw"></i> Paws & Bubbles</a>
           <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
           </div>
         </div>
         
