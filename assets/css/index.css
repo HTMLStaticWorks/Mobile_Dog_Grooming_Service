@@ -321,3 +321,36 @@ img {
     font-size: 1rem;
   }
 }
+
+/* Pricing Header Responsive Adjustments */
+@media (max-width: 768px) {
+  .pricing-header {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center !important;
+  }
+  .pricing-header .pricing-text {
+    text-align: center;
+  }
+}
+
+/* Feature List Text Centering in Tab View */
+@media (max-width: 1024px) {
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-item {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .feature-text {
+    text-align: center;
+  }
+}
+

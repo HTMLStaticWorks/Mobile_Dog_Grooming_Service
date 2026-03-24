@@ -443,7 +443,18 @@
     grid-template-columns: 1fr 1fr;
   }
   .decorative-blob { right: 0 !important; top: -10px !important; }
-  .climate-badge { left: 0 !important; bottom: 10px !important; }
+  .climate-badge { 
+    left: 0 !important; 
+    bottom: 10px !important; 
+    padding: 0.6rem 1rem !important; 
+    gap: 0.5rem !important;
+  }
+  .climate-badge div[style*="font-size: 1.5rem"] {
+    font-size: 1rem !important;
+  }
+  .climate-badge h4 {
+    font-size: 0.75rem !important;
+  }
 }
 
 @media (max-width: 480px) {
