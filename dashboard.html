@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-no-rtl>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +61,26 @@
       }
       .sidebar { display: none; }
     }
+
+    /* RTL Overrides */
+    [dir="rtl"] .sidebar {
+      border-right: none;
+      border-left: 1px solid var(--border-color);
+      border-radius: 0 0 0 var(--radius-lg);
+    }
+    
+    [dir="rtl"] .sidebar-menu li a {
+      border-left: none;
+      border-right: 3px solid transparent;
+    }
+    
+    [dir="rtl"] .sidebar-menu li a:hover, [dir="rtl"] .sidebar-menu li a.active {
+      border-right-color: var(--primary);
+    }
+
+    [dir="rtl"] .floating-nav {
+      flex-direction: row-reverse;
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -72,6 +92,15 @@
       <i class="fas fa-paw"></i>
       <span>Paws & Bubbles</span>
     </a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+      <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        RTL
+      </button>
+      <div class="profile-nav" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 0.25rem 0.5rem; border-radius: var(--radius-full); transition: background 0.3s ease;">
+        <img src="https://i.pravatar.cc/100?img=12" alt="Alex" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+        <i class="fas fa-chevron-down" style="font-size: 0.75rem; color: var(--text-muted);"></i>
+      </div>
+    </div>
 
   </nav>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-no-rtl>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,11 @@
 
 
   <!-- Login Card -->
-  <div class="card fade-in-up appear" style="max-width: 450px; width: 100%; padding: 3rem; background: var(--surface); box-shadow: var(--shadow-xl); border: none; border-radius: 30px;">
+  <div class="card fade-in-up appear" style="max-width: 450px; width: 100%; padding: 3rem; background: var(--surface); box-shadow: var(--shadow-xl); border: none; border-radius: 30px; position: relative;">
+    <!-- RTL Toggle -->
+    <button id="rtl-toggle" aria-label="Toggle RTL" style="position: absolute; top: 1.5rem; right: 1.5rem; width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface-alt); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10;">
+      RTL
+    </button>
     <div class="text-center" style="margin-bottom: 2.5rem;">
       <a href="index.html" class="navbar-brand" style="justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem;">
         <i class="fas fa-paw"></i>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-no-rtl>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,6 +74,20 @@
       border-color: var(--primary);
       color: white;
     }
+
+    /* RTL Overrides */
+    [dir="rtl"] .progress-bar-fill {
+      left: auto;
+      right: 0;
+    }
+    
+    [dir="rtl"] .next-btn i {
+      transform: scaleX(-1);
+    }
+
+    [dir="rtl"] .prev-btn i {
+      transform: scaleX(-1);
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -85,6 +99,9 @@
       <i class="fas fa-paw"></i>
       <span>Paws & Bubbles</span>
     </a>
+    <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+      RTL
+    </button>
 
   </nav>
 
