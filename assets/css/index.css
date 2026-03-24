@@ -6,8 +6,8 @@
   --primary-hover: #319795;
   --primary-light: #e6fffa;
   --secondary: #fdfbf7; /* Warm Beige */
-  --accent: #fc8181; /* Soft Coral Pink */
-  --accent-hover: #f56565;
+  --accent: #38b2ac; /* Matches Primary Teal */
+  --accent-hover: #319795;
   
   --bg-color: #f7fafc; /* Very Light Gray */
   --surface: #ffffff;
@@ -38,7 +38,7 @@
   --primary-hover: #38b2ac;
   --primary-light: rgba(56, 178, 172, 0.2);
   --secondary: #1a202c;
-  --accent: #fc8181;
+  --accent: #4fd1c5;
   
   --bg-color: #0f172a;
   --surface: #1e293b;
@@ -107,18 +107,18 @@ img {
 /* Base Layout Helpers */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 4%;
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 3.5rem 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .section-title h2 {

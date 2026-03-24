@@ -20,23 +20,28 @@
       <span>Paws & Bubbles</span>
     </a>
     <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="index2.html">Home 2</a></li>
+        </ul>
+      </li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
       <li><a href="contact.html" class="nav-link active">Contact</a></li>
-      <li>
+      <li class="mobile-toggle-item theme-btn-container">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
         </button>
       </li>
-      <li>
-        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+      <li class="mobile-toggle-item rtl-btn-container">
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
           RTL
         </button>
       </li>
-      <li><a href="login.html" class="nav-link">Log In</a></li>
-      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Dashboard</a></li>
       <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
     </ul>
     <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -61,15 +66,13 @@
         <div class="card border-none" style="padding: 2.5rem; background: var(--surface);">
           <h3 style="margin-bottom: 2rem; text-align: center;">Send a Message</h3>
           <form onsubmit="event.preventDefault(); alert('Message Sent!');">
-            <div class="grid grid-2" style="gap: 1.5rem;">
-              <div class="form-group" style="margin-bottom: 0;">
-                <label class="form-label">Name</label>
-                <input type="text" class="form-control" required>
-              </div>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" required>
-              </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" required>
             </div>
             <div class="form-group" style="margin-top: 1.5rem;">
               <label class="form-label">Subject</label>
@@ -85,29 +88,37 @@
         
         <!-- Info & Map -->
         <div style="display: flex; flex-direction: column; gap: 2rem;">
-          <div class="card border-none" style="padding: 2rem; background: var(--primary-light);">
+          <div class="card border-none" style="padding: 2rem; background: var(--primary-light); text-align: center;">
             <h3 style="margin-bottom: 2rem; text-align: center;">Contact Information</h3>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center;">
+            <ul style="list-style: none; padding: 0; display: inline-block; text-align: left; margin: 0 auto; width: fit-content;">
               <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
-                <i class="fas fa-envelope text-primary" style="font-size: 1.25rem;"></i>
+                <i class="fas fa-envelope text-primary" style="font-size: 1.25rem; width: 25px; text-align: center;"></i>
                 <span style="font-weight: 600;">hello@pawsandbubbles.com</span>
               </li>
               <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
-                <i class="fas fa-phone text-primary" style="font-size: 1.25rem;"></i>
+                <i class="fas fa-phone text-primary" style="font-size: 1.25rem; width: 25px; text-align: center;"></i>
                 <span style="font-weight: 600;">(555) 123-4567</span>
               </li>
               <li style="display: flex; align-items: center; gap: 1rem;">
-                <i class="fas fa-map-marker-alt text-primary" style="font-size: 1.25rem;"></i>
+                <i class="fas fa-map-marker-alt text-primary" style="font-size: 1.25rem; width: 25px; text-align: center;"></i>
                 <span style="font-weight: 600;">Serving the Greater Metro Area</span>
               </li>
             </ul>
           </div>
           
-          <!-- Map Placeholder -->
-          <div class="card border-none" style="flex-grow: 1; padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #e2e8f0; min-height: 250px;">
-            <div style="text-align: center; color: var(--text-muted);">
-              <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-              <p style="margin: 0; font-weight: 700;">Service Area Map Placeholder</p>
+          <!-- Service Area Map -->
+          <div class="card border-none" style="flex-grow: 1; padding: 0; overflow: hidden; height: 350px; position: relative;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925916665!2d-80.29949925244585!3d25.782390733527264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a58123695d%3A0x3f3cd3d978a6379!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1711285000000!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: white; padding: 0.5rem 1rem; border-radius: 30px; box-shadow: var(--shadow-sm); font-size: 0.85rem; font-weight: 700; color: var(--primary); pointer-events: none; border: 1px solid var(--border-color);">
+              <i class="fas fa-location-dot"></i> We Service the Whole City!
             </div>
           </div>
         </div>

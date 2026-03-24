@@ -24,23 +24,28 @@
       <span>Paws & Bubbles</span>
     </a>
     <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link active">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link active">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html" class="active">Home 1</a></li>
+          <li><a href="index2.html">Home 2</a></li>
+        </ul>
+      </li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li>
+      <li class="mobile-toggle-item theme-btn-container">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
         </button>
       </li>
-      <li>
+      <li class="mobile-toggle-item rtl-btn-container">
         <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
           RTL
         </button>
       </li>
-      <li><a href="login.html" class="nav-link">Log In</a></li>
-      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Dashboard</a></li>
       <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
     </ul>
     <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -50,18 +55,17 @@
   <header class="section" style="padding-top: 8rem; min-height: 90vh; display: flex; align-items: center; overflow: hidden;">
     <div class="container">
       <div class="grid grid-2" style="align-items: center;">
-        <div class="hero-content fade-in-up">
+        <div class="hero-content fade-in-up" style="text-align: center;">
           <span class="badge" style="margin-bottom: 1rem;"><i class="fas fa-star" style="color: #ecc94b;"></i> Top Rated Mobile Groomer</span>
           <h1>Stress-free grooming <span class="text-primary">at your doorstep</span>.</h1>
-          <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">
+          <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem; margin-left: auto; margin-right: auto; max-width: 600px;">
             Treat your furry friend to a spa day without leaving home. Our certified groomers provide a safe, calm, and luxurious experience.
           </p>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="booking.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Book Grooming <i class="fas fa-arrow-right"></i></a>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
             <a href="services.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1rem 2rem;">View Pricing</a>
           </div>
           
-          <div style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem;">
+          <div style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem; justify-content: center;">
             <div style="display: flex;">
               <img src="https://i.pravatar.cc/100?img=1" alt="User" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; margin-right: -10px; z-index: 3;">
               <img src="https://i.pravatar.cc/100?img=2" alt="User" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; margin-right: -10px; z-index: 2;">
@@ -104,33 +108,25 @@
       
       <div class="grid grid-2" style="margin-bottom: 2rem;">
         <div class="card fade-in-up delay-100 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem; background-color: #e6fffa; color: var(--primary);">
-            <i class="fas fa-door-open"></i>
-          </div>
+          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=200" alt="Happy pet grooming" class="card-image">
           <h3 class="card-title" style="margin-bottom: 0.5rem;">100% Cage-Free</h3>
           <p style="color: var(--text-muted); margin: 0;">Your pet is never put in a cage or crate. They have the exclusive attention of their groomer from start to finish.</p>
         </div>
         
         <div class="card fade-in-up delay-200 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem; background-color: #ebf8ff; color: #3182ce;">
-            <i class="fas fa-clock"></i>
-          </div>
+          <img src="https://images.unsplash.com/photo-1527526029430-319f10814151?auto=format&fit=crop&w=200" alt="Mobile grooming van" class="card-image">
           <h3 class="card-title" style="margin-bottom: 0.5rem;">Save Hours of Time</h3>
           <p style="color: var(--text-muted); margin: 0;">No more driving back and forth, or waiting hours for a call that your dog is ready. We come directly to your driveway.</p>
         </div>
 
         <div class="card fade-in-up delay-300 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem; background-color: rgba(252, 129, 129, 0.1); color: var(--accent);">
-            <i class="fas fa-viruses"></i>
-          </div>
+          <img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=200" alt="Sanitized environment" class="card-image">
           <h3 class="card-title" style="margin-bottom: 0.5rem;">No Exposure to Illness</h3>
           <p style="color: var(--text-muted); margin: 0;">Since your dog is the only pet in our van, there is zero risk of catching kennel cough, fleas, or ticks from other dogs.</p>
         </div>
 
         <div class="card fade-in-up delay-400 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem; background-color: #faf5ff; color: #805ad5;">
-            <i class="fas fa-broom"></i>
-          </div>
+          <img src="assets/images/van-interior.png" alt="Clean van interior" class="card-image">
           <h3 class="card-title" style="margin-bottom: 0.5rem;">No Mess at Home</h3>
           <p style="color: var(--text-muted); margin: 0;">Keep your bathrooms clean! Our vans are fully self-sufficient with heated water, electricity, and climate control.</p>
         </div>
@@ -149,25 +145,19 @@
       
       <div class="grid grid-3">
         <div class="card fade-in-up delay-100 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem;">
-            <i class="far fa-calendar-check"></i>
-          </div>
+          <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=200" alt="Book Online" class="card-image">
           <h3 class="card-title">1. Book Online</h3>
           <p>Choose your preferred date, time, and premium grooming package through our seamless booking system.</p>
         </div>
         
         <div class="card fade-in-up delay-200 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem; background-color: rgba(252, 129, 129, 0.1); color: var(--accent);">
-            <i class="fas fa-truck"></i>
-          </div>
+          <img src="assets/images/we-arrive.png" alt="We Arrive" class="card-image">
           <h3 class="card-title">2. We Arrive</h3>
           <p>Our fully-equipped mobile spa arrives at your doorstep, minimizing travel stress for your furry friend.</p>
         </div>
         
         <div class="card fade-in-up delay-300 text-center">
-          <div class="card-icon" style="margin: 0 auto 1.5rem;">
-            <i class="fas fa-dog"></i>
-          </div>
+          <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&q=80&w=200" alt="Fresh & Clean" class="card-image">
           <h3 class="card-title">3. Fresh & Clean</h3>
           <p>Your pet returns to your arms looking fabulous, smelling great, and feeling perfectly relaxed.</p>
         </div>
@@ -242,7 +232,7 @@
         <!-- Basic Bath -->
         <div class="card fade-in-up delay-100">
           <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&q=80&w=600&h=400" alt="Basic Bath" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 250px; object-fit: cover; object-position: center 20%; display: block;">
-          <h3 class="card-title">Squeaky Clean Bath</h3>
+          <h3 class="card-title" style="text-align: center;">Squeaky Clean Bath</h3>
           <p>Perfect for between haircuts to keep your pup smelling fresh.</p>
           <ul style="list-style: none; margin-bottom: 1.5rem; flex-grow: 1;">
             <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-primary" style="margin-right: 0.5rem;"></i> Premium Shampoo</li>
@@ -259,7 +249,7 @@
         <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative;">
           <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.25rem 1rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">MOST POPULAR</div>
           <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=600&h=400" alt="Full Stylist" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 250px; object-fit: cover; object-position: center 20%; display: block;">
-          <h3 class="card-title">The Full Makeover</h3>
+          <h3 class="card-title" style="text-align: center;">The Full Makeover</h3>
           <p>A complete spa day including customized breed-specific styling.</p>
           <ul style="list-style: none; margin-bottom: 1.5rem; flex-grow: 1;">
             <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-primary" style="margin-right: 0.5rem;"></i> Everything in Bath</li>
@@ -276,7 +266,7 @@
         <!-- Spa Extra -->
         <div class="card fade-in-up delay-300">
            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600&h=400" alt="Puppy Spa" style="border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0; margin: -2rem -2rem 1.5rem -2rem; width: calc(100% + 4rem); max-width: none; height: 250px; object-fit: cover; object-position: center 20%; display: block;">
-          <h3 class="card-title">Puppy's First Spa</h3>
+          <h3 class="card-title" style="text-align: center;">Puppy's First Spa</h3>
           <p>Gentle introduction to grooming for puppies under 6 months.</p>
           <ul style="list-style: none; margin-bottom: 1.5rem; flex-grow: 1;">
             <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-primary" style="margin-right: 0.5rem;"></i> Gentle Tearless Shampoo</li>
@@ -347,6 +337,10 @@
         <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 4" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
         <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 5" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
         <img src="https://images.unsplash.com/photo-1625316708582-7c38734be31d?auto=format&fit=crop&q=80&w=400&h=400" alt="Groomed Dog 6" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="assets/images/portfolio-7.png" alt="Groomed Poodle" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="assets/images/portfolio-8.png" alt="Groomed Samoyed" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="assets/images/portfolio-9.png" alt="Groomed Schnauzer" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="assets/images/portfolio-10.png" alt="Groomed Golden Retriever" style="width: 250px; height: 250px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); flex-shrink: 0; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
       </div>
       <button class="slider-btn next" id="slider-next" aria-label="Next Gallary"><i class="fas fa-chevron-right"></i></button>
     </div>
@@ -382,22 +376,56 @@
     </div>
     <div class="container" style="max-width: 800px;">
       
-      <div class="fade-in-up delay-100" style="background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; padding: 1.5rem;">
-        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;"><i class="fas fa-question-circle text-primary" style="margin-right: 0.5rem;"></i> Do I need to provide water or electricity?</h4>
-        <p style="color: var(--text-muted); margin-bottom: 0;">No! Our vans are 100% self-sufficient. We carry our own fresh heated water and run on quiet solar-powered generators.</p>
+      <div class="faq-item fade-in-up delay-100">
+        <div class="faq-header">
+          <h4><i class="fas fa-question-circle text-primary" style="margin-right: 0.8rem;"></i> Do I need to provide water or electricity?</h4>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-content">
+          <p style="color: var(--text-muted); margin: 0;">No! Our vans are 100% self-sufficient. We carry our own fresh heated water (over 50 gallons) and run on quiet, eco-friendly solar-powered battery systems.</p>
+        </div>
       </div>
 
-      <div class="fade-in-up delay-200" style="background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; padding: 1.5rem;">
-        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;"><i class="fas fa-question-circle text-primary" style="margin-right: 0.5rem;"></i> Do I need to be home for the appointment?</h4>
-        <p style="color: var(--text-muted); margin-bottom: 0;">For the first appointment, we require you to be home so we can meet you and your pet. Afterwards, we can arrange latchkey services if you'll be at work.</p>
+      <div class="faq-item fade-in-up delay-200">
+        <div class="faq-header">
+          <h4><i class="fas fa-question-circle text-primary" style="margin-right: 0.8rem;"></i> Do I need to be home for the appointment?</h4>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-content">
+          <p style="color: var(--text-muted); margin: 0;">For the first appointment, we require you to be home so we can meet you and your pet. Afterwards, once we are acquainted, we can arrange secure latchkey services if you need to be out.</p>
+        </div>
       </div>
 
-      <div class="fade-in-up delay-300" style="background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; padding: 1.5rem;">
-        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;"><i class="fas fa-question-circle text-primary" style="margin-right: 0.5rem;"></i> How long does a grooming session take?</h4>
-        <p style="color: var(--text-muted); margin-bottom: 0;">Usually between 1 to 2 hours depending on the size of your dog, their coat condition, and the specific package chosen.</p>
+      <div class="faq-item fade-in-up delay-300">
+        <div class="faq-header">
+          <h4><i class="fas fa-question-circle text-primary" style="margin-right: 0.8rem;"></i> How long does a grooming session take?</h4>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-content">
+          <p style="color: var(--text-muted); margin: 0;">Usually between 1.5 to 2.5 hours depending on the breed, size, and coat condition. We focus on one-on-one attention, so we never rush the process.</p>
+        </div>
       </div>
 
     </div>
+
+    <script>
+      document.querySelectorAll('.faq-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.parentElement;
+          const isActive = item.classList.contains('active');
+          
+          // Close all other items
+          document.querySelectorAll('.faq-item').forEach(otherItem => {
+            otherItem.classList.remove('active');
+          });
+          
+          // Toggle current item
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+    </script>
   </section>
 
   <!-- CTA Section -->

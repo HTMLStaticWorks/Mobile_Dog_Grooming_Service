@@ -12,10 +12,18 @@
 </head>
 <body style="background: var(--surface-alt); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; position: relative;">
 
-  <button id="rtl-toggle" aria-label="Toggle RTL" style="position: absolute; top: 2rem; right: 2rem; width: 40px; height: 40px; font-size: 0.8rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); z-index: 100;">RTL</button>
 
   <!-- Sign Up Card -->
-  <div class="card fade-in-up appear" style="max-width: 500px; width: 100%; padding: 3rem; background: var(--surface); box-shadow: var(--shadow-xl); border: none; border-radius: 30px;">
+  <div class="card fade-in-up appear" style="max-width: 500px; width: 100%; padding: 3rem; background: var(--surface); box-shadow: var(--shadow-xl); border: none; border-radius: 30px; position: relative;">
+    <!-- Theme & RTL Toggles -->
+    <div style="position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.75rem; align-items: center; z-index: 10;">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem; background: var(--surface-alt); border: 1px solid var(--border-color);">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface-alt); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        RTL
+      </button>
+    </div>
     <div class="text-center" style="margin-bottom: 2.5rem;">
       <a href="index.html" class="navbar-brand" style="justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem;">
         <i class="fas fa-paw"></i>
@@ -26,15 +34,13 @@
     </div>
 
     <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-      <div class="grid grid-2" style="gap: 1rem; margin-bottom: 1.5rem;">
-        <div class="form-group" style="margin-bottom: 0;">
-          <label class="form-label">First Name</label>
-          <input type="text" class="form-control" placeholder="John" required style="background: var(--surface-alt);">
-        </div>
-        <div class="form-group" style="margin-bottom: 0;">
-          <label class="form-label">Last Name</label>
-          <input type="text" class="form-control" placeholder="Doe" required style="background: var(--surface-alt);">
-        </div>
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" placeholder="John" required style="background: var(--surface-alt);">
+      </div>
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" placeholder="Doe" required style="background: var(--surface-alt);">
       </div>
 
       <div class="form-group" style="margin-bottom: 1.5rem;">

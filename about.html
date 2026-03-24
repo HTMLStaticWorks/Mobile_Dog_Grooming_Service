@@ -23,23 +23,28 @@
       <span>Paws & Bubbles</span>
     </a>
     <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="index2.html">Home 2</a></li>
+        </ul>
+      </li>
       <li><a href="about.html" class="nav-link active">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li>
+      <li class="mobile-toggle-item theme-btn-container">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
         </button>
       </li>
-      <li>
-        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+      <li class="mobile-toggle-item rtl-btn-container">
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
           RTL
         </button>
       </li>
-      <li><a href="login.html" class="nav-link">Log In</a></li>
-      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Dashboard</a></li>
       <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
     </ul>
     <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -197,24 +202,26 @@
         <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.7);">Our team is comprised of lifelong animal lovers who happen to be world-class artists. Every stylist is fully insured and pet-CPR certified.</p>
       </div>
       
-      <div class="grid grid-3" style="gap: 2rem; margin-top: 3rem;">
-        <div class="fade-in-up text-center">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 4px solid rgba(255,255,255,0.1); display: block;" alt="Team Lead">
-          <h3 style="margin-bottom: 0.25rem; color: white;">Jamie Chen</h3>
-          <p class="text-primary font-bold" style="margin-bottom: 1rem;">Founder & Senior Stylist</p>
-          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6);">After 15 years in static salons, Jamie founded Paws & Bubbles to provide a more humane, one-on-one grooming experience.</p>
+      <div class="grid grid-3" style="gap: 2rem; margin-top: 4rem;">
+        <div class="team-card fade-in-up">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Team Lead">
+          <h3>Jamie Chen</h3>
+          <p class="stylist-title">Founder & Senior Stylist</p>
+          <p class="bio">After 15 years in static salons, Jamie founded Paws & Bubbles to provide a more humane, one-on-one grooming experience.</p>
         </div>
-        <div class="fade-in-up delay-100 text-center">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: top center; margin: 0 auto 1.5rem auto; border: 4px solid rgba(255,255,255,0.1); display: block;" alt="Lead Groomer">
-          <h3 style="margin-bottom: 0.25rem; color: white;">Lucas Miller</h3>
-          <p class="text-primary font-bold" style="margin-bottom: 1rem;">Lead Tech & Senior Groomer</p>
-          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6);">Lucas is our large-breed expert and ensures our fleet's high-tech systems are always in peak condition for our furry clients.</p>
+        
+        <div class="team-card fade-in-up delay-100">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" style="object-position: top center;" alt="Lead Groomer">
+          <h3>Lucas Miller</h3>
+          <p class="stylist-title">Lead Tech & Senior Groomer</p>
+          <p class="bio">Lucas is our large-breed expert and ensures our fleet's high-tech systems are always in peak condition for our furry clients.</p>
         </div>
-        <div class="fade-in-up delay-200 text-center">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 4px solid rgba(255,255,255,0.1); display: block;" alt="Cat Specialist">
-          <h3 style="margin-bottom: 0.25rem; color: white;">Samantha Reed</h3>
-          <p class="text-primary font-bold" style="margin-bottom: 1rem;">Senior Groomer & Cat Lead</p>
-          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6);">Samantha brings a quiet, calming energy to every spa session, specializing in feline grooming and senior pet care.</p>
+        
+        <div class="team-card fade-in-up delay-200">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Cat Specialist">
+          <h3>Samantha Reed</h3>
+          <p class="stylist-title">Senior Groomer & Cat Lead</p>
+          <p class="bio">Samantha brings a quiet, calming energy to every spa session, specializing in feline grooming and senior pet care.</p>
         </div>
       </div>
     </div>

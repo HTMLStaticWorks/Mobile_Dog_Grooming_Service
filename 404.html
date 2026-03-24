@@ -20,18 +20,23 @@
       <span>Paws & Bubbles</span>
     </a>
     <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="index2.html">Home 2</a></li>
+        </ul>
+      </li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li>
+      <li class="mobile-toggle-item theme-btn-container">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
         </button>
       </li>
-      <li>
-        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+      <li class="mobile-toggle-item rtl-btn-container">
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
           RTL
         </button>
       </li>

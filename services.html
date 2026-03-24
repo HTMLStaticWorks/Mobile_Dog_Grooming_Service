@@ -21,30 +21,35 @@
       <span>Paws & Bubbles</span>
     </a>
     <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link">Home 2</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="index2.html">Home 2</a></li>
+        </ul>
+      </li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link active">Services</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li>
+      <li class="mobile-toggle-item theme-btn-container">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
         </button>
       </li>
-      <li>
-        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+      <li class="mobile-toggle-item rtl-btn-container">
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
           RTL
         </button>
       </li>
-      <li><a href="login.html" class="nav-link">Log In</a></li>
-      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Dashboard</a></li>
       <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
     </ul>
     <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
   </nav>
 
   <!-- Page Header -->
-  <header class="section" style="padding-top: 8rem; background-color: var(--primary-light); text-align: center;">
+  <header class="section" style="padding: 6rem 0 3.5rem; background-color: var(--primary-light); text-align: center;">
     <div class="container fade-in-up">
       <span class="text-primary font-bold">PACKAGES & EXTRAS</span>
       <h1>Transparent Pricing</h1>
@@ -57,14 +62,16 @@
   <!-- Pricing Tables -->
   <section class="section">
     <div class="container">
-      <!-- Tabs for Size (Visual only for simplicity) -->
-      <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem;" class="fade-in-up">
-        <button class="badge" style="border: none; padding: 0.5rem 1.5rem; background: var(--primary); color: white; cursor: pointer;">Small (0-20 lbs)</button>
-        <button class="badge" style="border: none; padding: 0.5rem 1.5rem; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); cursor: pointer;">Medium (21-40 lbs)</button>
-        <button class="badge" style="border: none; padding: 0.5rem 1.5rem; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); cursor: pointer;">Large (41+ lbs)</button>
+      <!-- Tabs for Size (Dynamic) -->
+      <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;" class="fade-in-up">
+        <button class="size-tab active" onclick="showSize('small')" id="tab-small">Small (0-20 lbs)</button>
+        <button class="size-tab" onclick="showSize('medium')" id="tab-medium">Medium (21-40 lbs)</button>
+        <button class="size-tab" onclick="showSize('large')" id="tab-large">Large (41+ lbs)</button>
       </div>
 
-      <div class="grid grid-3">
+      <div id="pricing-container">
+        <!-- Small Dogs -->
+        <div id="pricing-small" class="grid grid-3" style="gap: 2rem;">
         <!-- Basic Bath -->
         <div class="card fade-in-up delay-100">
           <h3 class="card-title text-center" style="font-size: 1.5rem;">Basic Bath</h3>
@@ -85,8 +92,8 @@
 
         <!-- Full Groom -->
         <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative; box-shadow: var(--shadow-lg); transform: translateY(-10px);">
-          <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700;">MOST POPULAR</div>
-          <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 1rem;">Full Grooming</h3>
+          <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700; white-space: nowrap; z-index: 10;">MOST POPULAR</div>
+          <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 2rem;">Full Grooming</h3>
           <div class="text-center" style="margin: 1rem 0 2rem;">
             <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$95</span>
             <span class="text-muted">/ starting</span>
@@ -119,8 +126,123 @@
           <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Puppy Spa</a>
         </div>
       </div>
+
+      <!-- Medium Dogs -->
+      <div id="pricing-medium" class="grid grid-3" style="gap: 2rem; display: none;">
+        <!-- Basic Bath -->
+        <div class="card fade-in-up">
+          <h3 class="card-title text-center" style="font-size: 1.5rem;">Basic Bath</h3>
+          <div class="text-center" style="margin: 1rem 0 2rem;">
+            <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$75</span>
+            <span class="text-muted">/ starting</span>
+          </div>
+          <p class="text-center" style="margin-bottom: 1.5rem;">Perfect for maintaining a healthy coat between full grooms.</p>
+          <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Premium Shampoo & Conditioner</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Blow dry & 15-min brush out</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Ear cleaning</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gland expression (upon request)</li>
+          </ul>
+          <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Bath</a>
+        </div>
+
+        <!-- Full Groom -->
+        <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative; box-shadow: var(--shadow-lg); transform: translateY(-10px);">
+          <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700; white-space: nowrap; z-index: 10;">MOST POPULAR</div>
+          <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 2rem;">Full Grooming</h3>
+          <div class="text-center" style="margin: 1rem 0 2rem;">
+            <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$110</span>
+            <span class="text-muted">/ starting</span>
+          </div>
+          <p class="text-center" style="margin-bottom: 1.5rem;">A complete head-to-paw makeover tailored to your dog.</p>
+          <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><strong><i class="fas fa-plus text-primary"></i> Everything in Basic Bath</strong></li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Custom Haircut & Styling</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Sanitary Trim</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Paw pad shave</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Breath freshener spray</li>
+          </ul>
+          <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Full Groom</a>
+        </div>
+
+        <!-- Puppy Spa -->
+        <div class="card fade-in-up delay-400">
+          <h3 class="card-title text-center" style="font-size: 1.5rem;">Puppy Spa</h3>
+          <div class="text-center" style="margin: 1rem 0 2rem;">
+            <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$65</span>
+            <span class="text-muted">/ flat rate</span>
+          </div>
+          <p class="text-center" style="margin-bottom: 1.5rem;">For puppies under 6 months. A gentle intro to grooming.</p>
+          <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Tearless Puppy Bath</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gentle Blow Dry</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Light face, feet, & fanny trim</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim & Ear cleaning</li>
+          </ul>
+          <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Puppy Spa</a>
+        </div>
+      </div>
+
+      <!-- Large Dogs -->
+      <div id="pricing-large" class="grid grid-3" style="gap: 2rem; display: none;">
+        <!-- Basic Bath -->
+        <div class="card fade-in-up">
+          <h3 class="card-title text-center" style="font-size: 1.5rem;">Basic Bath</h3>
+          <div class="text-center" style="margin: 1rem 0 2rem;">
+            <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$90</span>
+            <span class="text-muted">/ starting</span>
+          </div>
+          <p class="text-center" style="margin-bottom: 1.5rem;">Perfect for maintaining a healthy coat between full grooms.</p>
+          <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Premium Shampoo & Conditioner</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Blow dry & 15-min brush out</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Ear cleaning</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gland expression (upon request)</li>
+          </ul>
+          <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Bath</a>
+        </div>
+
+        <!-- Full Groom -->
+        <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative; box-shadow: var(--shadow-lg); transform: translateY(-10px);">
+          <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700; white-space: nowrap; z-index: 10;">MOST POPULAR</div>
+          <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 2rem;">Full Grooming</h3>
+          <div class="text-center" style="margin: 1rem 0 2rem;">
+            <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$135</span>
+            <span class="text-muted">/ starting</span>
+          </div>
+          <p class="text-center" style="margin-bottom: 1.5rem;">A complete head-to-paw makeover tailored to your dog.</p>
+          <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><strong><i class="fas fa-plus text-primary"></i> Everything in Basic Bath</strong></li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Custom Haircut & Styling</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Sanitary Trim</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Paw pad shave</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Breath freshener spray</li>
+          </ul>
+          <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Full Groom</a>
+        </div>
+
+        <!-- Puppy Spa -->
+        <div class="card fade-in-up delay-400">
+          <h3 class="card-title text-center" style="font-size: 1.5rem;">Puppy Spa</h3>
+          <div class="text-center" style="margin: 1rem 0 2rem;">
+            <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$80</span>
+            <span class="text-muted">/ flat rate</span>
+          </div>
+          <p class="text-center" style="margin-bottom: 1.5rem;">For puppies under 6 months. A gentle intro to grooming.</p>
+          <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Tearless Puppy Bath</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gentle Blow Dry</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Light face, feet, & fanny trim</li>
+            <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim & Ear cleaning</li>
+          </ul>
+          <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Puppy Spa</a>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Add-ons -->
   <section class="section" style="background-color: var(--surface-alt);">
@@ -132,8 +254,8 @@
       
       <div class="grid grid-2">
         <div class="card fade-in-up border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; color: var(--primary); width: 60px; text-align: center;"><i class="fas fa-tooth"></i></div>
-          <div style="flex-grow: 1; padding: 0 1rem;">
+          <img src="assets/images/teeth-brushing.png" alt="Teeth Brushing" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
             <h4 style="margin: 0;">Teeth Brushing</h4>
             <p style="margin: 0; font-size: 0.875rem;">Enzymatic gel and fresh breath spray</p>
           </div>
@@ -141,8 +263,8 @@
         </div>
 
         <div class="card fade-in-up delay-100 border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; color: var(--primary); width: 60px; text-align: center;"><i class="fas fa-wind"></i></div>
-          <div style="flex-grow: 1; padding: 0 1rem;">
+          <img src="assets/images/de-shedding.png" alt="De-Shedding Treatment" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
             <h4 style="margin: 0;">De-Shedding Treatment</h4>
             <p style="margin: 0; font-size: 0.875rem;">Special shampoo and 30-min extra brushing</p>
           </div>
@@ -150,8 +272,8 @@
         </div>
         
         <div class="card fade-in-up delay-200 border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; color: var(--primary); width: 60px; text-align: center;"><i class="fas fa-cut"></i></div>
-          <div style="flex-grow: 1; padding: 0 1rem;">
+          <img src="assets/images/nail-grinding.png" alt="Nail Grinding" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
             <h4 style="margin: 0;">Nail Grinding</h4>
             <p style="margin: 0; font-size: 0.875rem;">Filing sharp edges smoothly after trim</p>
           </div>
@@ -159,8 +281,8 @@
         </div>
 
         <div class="card fade-in-up delay-300 border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; color: var(--accent); width: 60px; text-align: center;"><i class="fas fa-bug"></i></div>
-          <div style="flex-grow: 1; padding: 0 1rem;">
+          <img src="assets/images/flea-tick.png" alt="Flea & Tick Bath" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
             <h4 style="margin: 0;">Flea & Tick Bath</h4>
             <p style="margin: 0; font-size: 0.875rem;">Medicated bath to eliminate pests</p>
           </div>
@@ -182,56 +304,19 @@
           <h2 style="font-size: 2.5rem; margin: 1rem 0 1.5rem;">The Maintenance Club</h2>
           <p style="font-size: 1.125rem; margin-bottom: 2rem;">Keep your dog looking and feeling their best year-round. Our subscription members enjoy priority booking and discounted rates for regular 4, 6, or 8-week rotations.</p>
           
-          <div class="card border-none" style="background: var(--surface-alt); padding: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
-             <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-percent"></i></div>
-             <p style="margin: 0;"><strong>10% Off</strong> every groom for members on 4-week schedules.</p>
+          <div class="card border-none" style="background: var(--surface-alt); padding: 2rem; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
+             <img src="assets/images/membership-discount.png" alt="Membership Discount" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: var(--shadow-md);">
+             <p style="margin: 0; font-size: 1.125rem;"><strong>10% Off</strong> every groom for members on 4-week schedules.</p>
           </div>
-          <div class="card border-none" style="background: var(--surface-alt); padding: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
-             <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-calendar-star"></i></div>
-             <p style="margin: 0;"><strong>Priority Scheduling</strong> during peak holiday seasons.</p>
+          <div class="card border-none" style="background: var(--surface-alt); padding: 2rem; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
+             <img src="assets/images/priority-booking.png" alt="Priority Scheduling" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: var(--shadow-md);">
+             <p style="margin: 0; font-size: 1.125rem;"><strong>Priority Scheduling</strong> during peak holiday seasons.</p>
           </div>
-          <div style="margin-top: 2rem;">
-            <a href="booking.html" class="btn btn-primary">Join the Club</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- The Grooming Process -->
-  <section class="section" style="background-color: var(--surface-alt);">
-    <div class="container">
-      <div class="section-title fade-in-up text-center">
-        <h2>The 5-Step Spa Experience</h2>
-        <p style="max-width: 600px; margin: 0 auto;">Curious about what happens inside the van? Here is our standard ritual for every guest.</p>
-      </div>
-      
-      <div class="grid grid-5" style="gap: 1.5rem; margin-top: 4rem;">
-        <div class="fade-in-up text-center">
-          <div style="background: var(--surface); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm); font-size: 1.5rem; color: var(--primary); font-weight: bold;">1</div>
-          <h4 style="margin-bottom: 0.5rem;">Pre-Trim</h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted);">Health check & initial brush out to remove loose fur.</p>
-        </div>
-        <div class="fade-in-up delay-100 text-center">
-          <div style="background: var(--surface); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm); font-size: 1.5rem; color: var(--primary); font-weight: bold;">2</div>
-          <h4 style="margin-bottom: 0.5rem;">Bath & Soak</h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted);">Double shampoo & deep condition with ozone water.</p>
-        </div>
-        <div class="fade-in-up delay-200 text-center">
-          <div style="background: var(--surface); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm); font-size: 1.5rem; color: var(--primary); font-weight: bold;">3</div>
-          <h4 style="margin-bottom: 0.5rem;">Blow Dry</h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted);">Cageless, hand-held fluff drying for ultimate comfort.</p>
-        </div>
-        <div class="fade-in-up delay-300 text-center">
-          <div style="background: var(--surface); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm); font-size: 1.5rem; color: var(--primary); font-weight: bold;">4</div>
-          <h4 style="margin-bottom: 0.5rem;">Precision Cut</h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted);">Hand-scissored styling to your exact breed standard.</p>
-        </div>
-        <div class="fade-in-up delay-400 text-center">
-          <div style="background: var(--surface); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm); font-size: 1.5rem; color: var(--accent); font-weight: bold;">5</div>
-          <h4 style="margin-bottom: 0.5rem;">Final Polish</h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted);">Spritz of cologne, treat, and walk back to your door!</p>
-        </div>
+      <div style="margin-top: 2rem; text-align: center;" class="fade-in-up delay-400">
+        <a href="booking.html" class="btn btn-primary" style="padding: 1.25rem 4rem; font-size: 1.25rem; border-radius: 50px;">Join the Club</a>
       </div>
     </div>
   </section>
@@ -263,21 +348,21 @@
   </section>
 
   <!-- Feature Preview / Coming Soon -->
-  <section class="section" style="background-color: var(--primary-light); text-align: center;">
+  <section class="section" style="background-color: var(--primary-light); text-align: center; padding: 4rem 0;">
     <div class="container fade-in-up">
-      <div class="hover-wiggle" style="font-size: 6rem; color: var(--primary); margin-bottom: 2rem; display: inline-block;">
+      <div class="hover-wiggle" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem; display: inline-block;">
         <i class="fas fa-bone"></i>
       </div>
-      <h1 style="color: var(--primary-hover); margin-bottom: 1rem;">We're fetching this feature!</h1>
-      <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-main);">
-        Our tech dogs are currently working hard behind the scenes building this out. Check back soon!
+      <h2 style="color: var(--primary-hover); margin-bottom: 1rem; font-size: 2.5rem;">We're fetching more features!</h2>
+      <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem; color: var(--text-main);">
+        Our tech dogs are currently working hard behind the scenes building new tools for you. Check back soon!
       </p>
       
-      <div class="card border-none" style="max-width: 400px; margin: 0 auto; padding: 2rem;">
-        <h3 style="font-size: 1.125rem; margin-bottom: 1rem;">Get Notified</h3>
-        <form style="display: flex; gap: 0.5rem;">
-          <input type="email" class="form-control" placeholder="Enter your email" required style="flex-grow: 1;">
-          <button type="submit" class="btn btn-primary" onclick="event.preventDefault(); alert('Subscribed!');"><i class="fas fa-paper-plane"></i></button>
+      <div class="card border-none" style="max-width: 450px; margin: 0 auto; padding: 2.5rem;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Get Notified</h3>
+        <form style="display: flex; gap: 0.75rem;">
+          <input type="email" class="form-control" placeholder="Enter your email address" required style="flex-grow: 1; padding: 0.75rem 1.25rem;">
+          <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem;"><i class="fas fa-paper-plane"></i></button>
         </form>
       </div>
     </div>
@@ -336,5 +421,26 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    function showSize(size) {
+      // Hide all grids
+      document.getElementById('pricing-small').style.display = 'none';
+      document.getElementById('pricing-medium').style.display = 'none';
+      document.getElementById('pricing-large').style.display = 'none';
+      
+      // Update buttons
+      document.querySelectorAll('.size-tab').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('tab-' + size).classList.add('active');
+      
+      // Show selected grid
+      const target = document.getElementById('pricing-' + size);
+      target.style.display = 'grid';
+      
+      // Force "appear" class on all animateable children since they might be hidden from IntersectionObserver
+      target.querySelectorAll('.fade-in-up').forEach(el => {
+        el.classList.add('appear');
+      });
+    }
+  </script>
 </body>
 </html>

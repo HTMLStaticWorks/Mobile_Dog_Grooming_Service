@@ -172,19 +172,16 @@
     
     .floating-nav {
       position: fixed;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 2rem);
-      max-width: 1200px;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border-radius: 100px;
-      padding: 0.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 2rem;
       z-index: 1000;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -198,14 +195,14 @@
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(252, 129, 129, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(252, 129, 129, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(252, 129, 129, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(56, 178, 172, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(56, 178, 172, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(56, 178, 172, 0); }
     }
 
     @keyframes slideDownNav {
-      from { opacity: 0; top: -50px; }
-      to { opacity: 1; top: 1rem; }
+      from { opacity: 0; top: -70px; }
+      to { opacity: 1; top: 0; }
     }
 
     .gallery-hover {
@@ -255,23 +252,28 @@
       <span>Paws & Bubbles</span>
     </a>
     <ul class="nav-links" style="gap: 1.5rem;">
-      <li><a href="index.html" class="nav-link">Home 1</a></li>
-      <li><a href="index2.html" class="nav-link active">Home 2</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link active">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="index2.html" class="active">Home 2</a></li>
+        </ul>
+      </li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li>
+      <li class="mobile-toggle-item theme-btn-container">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
           <i class="fas fa-moon"></i>
         </button>
       </li>
-      <li>
-        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-left: 1rem;">
+      <li class="mobile-toggle-item rtl-btn-container">
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
           RTL
         </button>
       </li>
-      <li><a href="login.html" class="nav-link">Log In</a></li>
-      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: rgba(255,255,255,0.5);">Dashboard</a></li>
+      <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Dashboard</a></li>
       <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
     </ul>
     <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -301,22 +303,22 @@
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; text-align: center;">
             <div>
-              <i class="fas fa-sun text-accent" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+              <img src="assets/images/solar-van.png" alt="Solar Powered Van" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; display: block; border: 3px solid var(--primary-light); box-shadow: var(--shadow-sm);">
               <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Solar Powered</h4>
               <p style="font-size: 0.9rem; color: var(--text-muted);">Quiet lithium-ion batteries replace noisy, gas-guzzling generators.</p>
             </div>
             <div>
-              <i class="fas fa-hot-tub text-accent" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+              <img src="assets/images/warm-water.png" alt="Warm Hydro-Massage" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; display: block; border: 3px solid var(--primary-light); box-shadow: var(--shadow-sm);">
               <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Endless Warm Water</h4>
               <p style="font-size: 0.9rem; color: var(--text-muted);">Tankless hydro-massage bathing systems ensure the perfect temperature.</p>
             </div>
             <div>
-              <i class="fas fa-map-marker-alt text-primary" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+              <img src="assets/images/gps-tracking.png" alt="Live GPS Tracking" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; display: block; border: 3px solid var(--primary-light); box-shadow: var(--shadow-sm);">
               <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Live GPS Tracking</h4>
               <p style="font-size: 0.9rem; color: var(--text-muted);">Watch exactly when your stylist will arrive via our mobile app.</p>
             </div>
             <div>
-              <i class="fas fa-video text-primary" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+              <img src="assets/images/paw-cam.png" alt="Paw-Cam Stream" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; display: block; border: 3px solid var(--primary-light); box-shadow: var(--shadow-sm);">
               <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Paw-Cam Stream</h4>
               <p style="font-size: 0.9rem; color: var(--text-muted);">Stream your dog's grooming session live to your phone securely.</p>
             </div>
@@ -414,12 +416,12 @@
   <section class="section" style="background: var(--surface);">
     <div class="container fade-in-up">
       <div style="background: #0f172a; border-radius: 30px; padding: 4rem 2rem; position: relative; overflow: hidden; color: white;">
-        <div class="app-cta-bg" style="position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000') center/cover; opacity: 0.3; mask-image: linear-gradient(to right, transparent, black); -webkit-mask-image: linear-gradient(to right, transparent, black);"></div>
-        <div style="position: relative; z-index: 2; max-width: 600px; padding: 2rem;">
-          <div class="zig-zag-badge" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 2rem;"><i class="fas fa-mobile-alt"></i> Download The App</div>
+        <div class="app-cta-bg" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000') center/cover; opacity: 0.15;"></div>
+        <div style="position: relative; z-index: 2; margin: 0 auto; text-align: center; padding: 2rem;">
+          <div class="zig-zag-badge" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); margin: 0 auto 2rem; display: inline-flex;"><i class="fas fa-mobile-alt"></i> Download The App</div>
           <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; color: #ffffff !important;">Manage bookings from your pocket.</h2>
-          <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem;">Download the Paws & Bubbles app to book instantly, track your groomer via GPS, view live paw-cam streams, and earn loyalty rewards.</p>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7); margin: 0 auto 3rem; max-width: 800px;">Download the Paws & Bubbles app to book instantly, track your groomer via GPS, view live paw-cam streams, and earn loyalty rewards.</p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="app-button" style="background: white; color: black; padding: 1rem 2rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
               <i class="fab fa-apple" style="font-size: 1.5rem;"></i> App Store
             </a>
