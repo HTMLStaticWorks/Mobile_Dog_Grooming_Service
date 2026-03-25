@@ -393,7 +393,7 @@
 }
 
 .footer-brand {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 1rem;
@@ -602,13 +602,13 @@
     padding: 0 1.25rem;
   }
 
-  .navbar-brand {
+  .navbar-brand, .footer-brand {
     font-size: 1.1rem;
     white-space: nowrap;
     gap: 0.25rem;
   }
   
-  .navbar-brand i {
+  .navbar-brand i, .footer-brand i {
     font-size: 1.25rem;
   }
   
