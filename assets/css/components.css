@@ -397,7 +397,14 @@
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 1rem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.footer-brand span {
+  color: var(--text-main);
 }
 
 .footer-desc {
