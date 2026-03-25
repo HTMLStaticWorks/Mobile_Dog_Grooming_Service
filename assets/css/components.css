@@ -461,7 +461,7 @@
 }
 
 .footer-socials a:hover {
-  color: #ffffff;
+  color: var(--primary-hover);
   transform: translateY(-3px) scale(1.1);
 }
 
@@ -488,26 +488,18 @@
   }
 
   .dropdown-menu {
-    position: static;
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-    background: transparent;
-    border: none;
     display: none;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: flex;
     flex-direction: column;
     margin-top: 0.5rem;
     background: var(--surface-alt);
     border-radius: var(--radius-sm);
+    list-style: none;
+    padding: 0;
+  }
+
+  .dropdown-menu.show,
+  .dropdown:hover .dropdown-menu {
+    display: flex;
   }
 
   .dropdown-menu li a {
@@ -537,6 +529,16 @@
   
   .nav-links li.theme-btn-container {
     right: 8rem;
+  }
+
+  [dir="rtl"] .nav-links li.rtl-btn-container {
+    right: auto;
+    left: 5.5rem;
+  }
+  
+  [dir="rtl"] .nav-links li.theme-btn-container {
+    right: auto;
+    left: 8rem;
   }
   
   .menu-toggle {
@@ -618,6 +620,64 @@
   .nav-links li.theme-btn-container {
     right: 6.75rem;
   }
+
+  [dir="rtl"] .nav-links li.rtl-btn-container {
+    right: auto;
+    left: 4.25rem;
+  }
+  
+  [dir="rtl"] .nav-links li.theme-btn-container {
+    right: auto;
+    left: 6.75rem;
+  }
+}
+
+/* SOCIAL LOGIN BUTTONS */
+.btn-social {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: var(--radius-full);
+  padding: 0.875rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-social:hover {
+  background: var(--surface-alt);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.separator {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.separator span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {

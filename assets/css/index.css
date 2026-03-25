@@ -208,14 +208,16 @@ img {
 }
 
 /* Specific component overrides */
-[dir="rtl"] .nav-links {
-  left: auto;
-  right: 100%;
-}
+@media (max-width: 1150px) {
+  [dir="rtl"] .nav-links {
+    left: auto;
+    right: 100%;
+  }
 
-[dir="rtl"] .nav-links.active {
-  right: 0;
-  left: auto;
+  [dir="rtl"] .nav-links.active {
+    right: 0;
+    left: auto;
+  }
 }
 
 [dir="rtl"] .sidebar {

@@ -104,10 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when a link is clicked
+    // Close menu when a link is clicked (excluding dropdown toggles)
     const links = navLinks.querySelectorAll('.nav-link');
     links.forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        // If it's a dropdown toggle on mobile, don't close the menu
+        if (window.innerWidth <= 1150 && link.nextElementSibling && link.nextElementSibling.classList.contains('dropdown-menu')) {
+          e.preventDefault();
+          link.nextElementSibling.classList.toggle('show');
+          return;
+        }
+
         navLinks.classList.remove('active');
         const icon = menuToggle.querySelector('i');
         if(icon) {
