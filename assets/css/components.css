@@ -638,6 +638,17 @@
     left: 6.75rem;
   }
 }
+@media (max-width: 480px) {
+  .nav-links li.mobile-toggle-item {
+    position: static !important;
+    visibility: inherit !important;
+    margin: 1rem 0 !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 
 /* SOCIAL LOGIN BUTTONS */
 .btn-social {

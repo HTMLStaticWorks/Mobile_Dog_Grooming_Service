@@ -52,46 +52,83 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="section" style="padding-top: 8rem; min-height: 90vh; display: flex; align-items: center; overflow: hidden;">
-    <div class="container">
-      <div class="grid grid-2" style="align-items: center;">
-        <div class="hero-content fade-in-up" style="text-align: center;">
-          <span class="badge" style="margin-bottom: 1rem;"><i class="fas fa-star" style="color: #ecc94b;"></i> Top Rated Mobile Groomer</span>
-          <h1>Stress-free grooming <span class="text-primary">at your doorstep</span>.</h1>
-          <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem; margin-left: auto; margin-right: auto; max-width: 600px;">
+  <header class="section mesh-bg" style="padding-top: 8rem; min-height: 100vh; display: flex; align-items: center; overflow: hidden; position: relative;">
+    <!-- Floating Decorative Elements -->
+    <div class="float-drift" style="position: absolute; top: 15%; left: 5%; font-size: 3rem; color: var(--primary); opacity: 0.1; transform: rotate(-15deg);"><i class="fas fa-paw"></i></div>
+    <div class="float-drift" style="position: absolute; top: 70%; left: 8%; font-size: 4rem; color: var(--primary); opacity: 0.08; transition-delay: 1s;"><i class="fas fa-circle"></i></div>
+    <div class="float-drift" style="position: absolute; top: 20%; right: 10%; font-size: 2.5rem; color: var(--primary); opacity: 0.1; transition-delay: 2s;"><i class="fas fa-paw"></i></div>
+    <div class="float-drift" style="position: absolute; top: 60%; right: 5%; font-size: 3.5rem; color: var(--primary); opacity: 0.08; transition-delay: 1.5s;"><i class="fas fa-circle-notch"></i></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+        <div class="hero-content order-tablet-2" style="text-align: left;">
+          <div class="fade-in-up" style="display: inline-block; padding: 0.5rem 1.25rem; background: var(--surface); border: 1px solid var(--border-color); backdrop-filter: blur(5px); border-radius: 100px; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+            <span style="font-size: 0.9rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fas fa-star" style="color: #ecc94b; margin-right: 0.5rem;"></i> Top Rated Mobile Groomer
+            </span>
+          </div>
+
+          <h1 class="text-reveal appear" style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 2rem; font-weight: 900;">
+            <span>Stress-free grooming</span><br>
+            <span class="text-primary">at your doorstep</span>.
+          </h1>
+
+          <p class="fade-in-up delay-100" style="font-size: 1.15rem; line-height: 1.6; margin-bottom: 2.5rem; max-width: 550px;">
             Treat your furry friend to a spa day without leaving home. Our certified groomers provide a safe, calm, and luxurious experience.
           </p>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-            <a href="services.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1rem 2rem;">View Pricing</a>
+
+          <div class="fade-in-up delay-200" style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+            <a href="booking.html" class="btn btn-primary shimmer" style="padding: 1.1rem 2.5rem; font-size: 1.1rem;">Book a Spa Day</a>
+            <a href="services.html" class="btn btn-outline" style="padding: 1.1rem 2rem; font-size: 1.1rem; background: var(--surface); backdrop-filter: blur(5px);">View Pricing</a>
           </div>
           
-          <div style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem; justify-content: center;">
+          <div class="fade-in-up delay-300" style="margin-top: 3rem; display: flex; align-items: center; gap: 1.25rem;">
             <div style="display: flex;">
-              <img src="https://i.pravatar.cc/100?img=1" alt="User" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; margin-right: -10px; z-index: 3;">
-              <img src="https://i.pravatar.cc/100?img=2" alt="User" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; margin-right: -10px; z-index: 2;">
-              <img src="https://i.pravatar.cc/100?img=3" alt="User" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; z-index: 1;">
+              <img src="https://i.pravatar.cc/100?img=1" alt="User" style="width: 45px; height: 45px; border-radius: 50%; border: 3px solid white; margin-right: -15px; z-index: 3; box-shadow: var(--shadow-sm);">
+              <img src="https://i.pravatar.cc/100?img=2" alt="User" style="width: 45px; height: 45px; border-radius: 50%; border: 3px solid white; margin-right: -15px; z-index: 2; box-shadow: var(--shadow-sm);">
+              <img src="https://i.pravatar.cc/100?img=3" alt="User" style="width: 45px; height: 45px; border-radius: 50%; border: 3px solid white; z-index: 1; box-shadow: var(--shadow-sm);">
             </div>
-            <p style="margin: 0; font-size: 0.875rem; font-weight: 700;">Trusted by 500+ happy pet parents</p>
+            <div style="text-align: left;">
+              <p style="margin: 0; font-size: 0.95rem; font-weight: 800; color: var(--text-main);">Trusted by 5,000+ pets</p>
+              <div style="color: #ecc94b; font-size: 0.8rem;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div class="hero-image scale-in delay-200" style="position: relative;">
-          <!-- SVG Blob background behind image -->
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-light); z-index: -1;" class="blob-shape"></div>
-          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800&h=800" alt="Happy Dog being groomed" style="border-radius: var(--radius-lg); object-fit: cover; width: 100%; height: 500px; box-shadow: var(--shadow-lg);">
+        <div class="hero-image order-tablet-1" style="position: relative;">
+          <div class="scale-in delay-200 blob-shape" style="position: relative; z-index: 1; box-shadow: var(--shadow-soft);">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1000&h=1000" alt="Happy Dog Grooming" style="width: 100%; height: 600px; object-fit: cover;">
+          </div>
           
-          <!-- Floating card -->
-          <div class="card hover-wiggle" style="position: absolute; bottom: 30px; left: -30px; padding: 1.5rem; background: var(--surface); z-index: 10;">
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <div style="width: 48px; height: 48px; background: #e6fffa; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                <i class="fas fa-check"></i>
+          <!-- Floating Info Badges -->
+          <div class="card float-drift delay-300" style="position: absolute; top: 10%; right: 5%; padding: 1.25rem; background: var(--surface); z-index: 10; border-radius: 20px; box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.05);">
+             <div style="display: flex; gap: 1rem; align-items: center;">
+              <div style="width: 40px; height: 40px; background: #e6fffa; color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                <i class="fas fa-certificate"></i>
               </div>
               <div>
-                <h4 style="margin: 0;">Certified Pros</h4>
-                <p style="margin: 0; font-size: 0.875rem;">10+ Years Exp.</p>
+                <h4 style="margin: 0; font-size: 0.9rem;">Certified Pros</h4>
+                <p style="margin: 0; font-size: 0.75rem;">10+ Years Exp.</p>
               </div>
             </div>
           </div>
+
+          <div class="card float-drift delay-500" style="position: absolute; bottom: 15%; left: 5%; padding: 1.25rem; background: var(--surface); z-index: 10; border-radius: 20px; box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.05);">
+             <div style="display: flex; gap: 1rem; align-items: center;">
+              <div style="width: 40px; height: 40px; background: #fffaf0; color: #ed8936; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 0.9rem;">Stress-Free</h4>
+                <p style="margin: 0; font-size: 0.75rem;">One-on-one Care</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative Glow -->
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: 120%; background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%); z-index: 0; opacity: 0.5;"></div>
         </div>
       </div>
     </div>

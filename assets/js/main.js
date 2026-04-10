@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  const elementsToAnimate = document.querySelectorAll('.fade-in-up, .scale-in');
+  const elementsToAnimate = document.querySelectorAll('.fade-in-up, .scale-in, .text-reveal');
   elementsToAnimate.forEach(el => observer.observe(el));
 
   /* -----------------
