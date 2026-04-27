@@ -88,26 +88,54 @@
     [dir="rtl"] .prev-btn i {
       transform: scaleX(-1);
     }
+
+    .fixed-toggles {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      z-index: 100;
+    }
+
+    [dir="rtl"] .fixed-toggles {
+      right: auto;
+      left: 2rem;
+    }
+
+    @media (max-width: 576px) {
+      .fixed-toggles {
+        top: 1rem;
+        right: 1rem;
+      }
+      [dir="rtl"] .fixed-toggles {
+        right: auto;
+        left: 1rem;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
 
 
+  <!-- Theme & RTL Toggles (Fixed Corner) -->
+  <div class="fixed-toggles">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 40px; height: 40px; font-size: 1rem; background: var(--surface); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 40px; height: 40px; font-size: 0.85rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">
+      RTL
+    </button>
+  </div>
+
   <!-- Booking Container -->
   <section class="section" style="padding-top: 8rem; min-height: 100vh; background-color: var(--bg-color);">
     <div class="container" style="max-width: 800px;">
       
       <div class="card fade-in-up" style="padding: 3rem; position: relative;">
-        <!-- Theme & RTL Toggles -->
-        <div style="position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.75rem; align-items: center; z-index: 10;">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem; background: var(--surface-alt); border: 1px solid var(--border-color);">
-            <i class="fas fa-moon"></i>
-          </button>
-          <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface-alt); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-            RTL
-          </button>
-        </div>
+
 
         <!-- Logo & Title -->
         <div class="text-center" style="margin-bottom: 2rem;">
