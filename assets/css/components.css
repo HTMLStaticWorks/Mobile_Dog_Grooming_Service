@@ -186,6 +186,21 @@
 .theme-toggle:hover {
   background: var(--primary-light);
   color: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(56, 178, 172, 0.2);
+}
+
+#rtl-toggle, #rtl-toggle-mobile {
+  transition: all var(--transition-fast) !important;
+}
+
+#rtl-toggle:hover, #rtl-toggle-mobile:hover {
+  background: var(--primary-light) !important;
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(56, 178, 172, 0.2);
 }
 
 /* BUTTONS */

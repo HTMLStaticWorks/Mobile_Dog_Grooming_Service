@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | Paws & Bubbles</title>
+  <meta name="description" content="View our transparent mobile dog grooming pricing. Packages for small, medium, and large breeds with no hidden fees.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="floating-nav" style="animation: slideDownNav 0.6s ease-out forwards;">
+    <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+      <i class="fas fa-paw"></i>
+      <span>Paws & Bubbles</span>
+    </a>
+    <ul class="nav-links" style="gap: 1.5rem;">
+      <li class="dropdown">
+        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="index2.html">Home 2</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li class="mobile-toggle-item theme-btn-container">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="width: 32px; height: 32px; font-size: 0.8rem;">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+      <li class="mobile-toggle-item rtl-btn-container">
+        <button id="rtl-toggle" aria-label="Toggle RTL" style="width: 32px; height: 32px; font-size: 0.7rem; font-weight: 800; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          RTL
+        </button>
+      </li>
+      <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Log In</a></li>
+      <li><a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem; border-color: var(--border-color); color: var(--text-main);">Dashboard</a></li>
+      <li><a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Book Now</a></li>
+    </ul>
+    <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="section" style="padding: 6rem 0 3.5rem; background-color: var(--primary-light); text-align: center;">
+    <div class="container fade-in-up">
+      <span class="text-primary font-bold">TRANSPARENT RATES</span>
+      <h1>Simple, Honest Pricing</h1>
+      <p style="max-width: 600px; margin: 0 auto; font-size: 1.25rem;">
+        We believe in clear pricing based on your dog's size and needs. No surprise fees, just premium care.
+      </p>
+    </div>
+  </header>
+
+  <!-- Pricing Tables -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-in-up text-center">
+        <h2>Choose Your Dog's Size</h2>
+        <p>Select your dog's weight category to see our specific package rates.</p>
+      </div>
+
+      <!-- Tabs for Size (Dynamic) -->
+      <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;" class="fade-in-up">
+        <button class="size-tab active" onclick="showSize('small')" id="tab-small">Small (0-20 lbs)</button>
+        <button class="size-tab" onclick="showSize('medium')" id="tab-medium">Medium (21-40 lbs)</button>
+        <button class="size-tab" onclick="showSize('large')" id="tab-large">Large (41+ lbs)</button>
+      </div>
+
+      <div id="pricing-container">
+        <!-- Small Dogs -->
+        <div id="pricing-small" class="grid grid-3" style="gap: 2rem;">
+          <!-- Basic Bath -->
+          <div class="card fade-in-up delay-100">
+            <h3 class="card-title text-center" style="font-size: 1.5rem;">Basic Bath</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$65</span>
+              <span class="text-muted">/ starting</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">Perfect for maintaining a healthy coat between full grooms.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Premium Shampoo & Conditioner</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Blow dry & 15-min brush out</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Ear cleaning</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gland expression (upon request)</li>
+            </ul>
+            <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Bath</a>
+          </div>
+
+          <!-- Full Groom -->
+          <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative; box-shadow: var(--shadow-lg); transform: translateY(-10px);">
+            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700; white-space: nowrap; z-index: 10;">MOST POPULAR</div>
+            <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 2rem;">Full Grooming</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$95</span>
+              <span class="text-muted">/ starting</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">A complete head-to-paw makeover tailored to your dog.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><strong><i class="fas fa-plus text-primary"></i> Everything in Basic Bath</strong></li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Custom Haircut & Styling</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Sanitary Trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Paw pad shave</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Breath freshener spray</li>
+            </ul>
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Full Groom</a>
+          </div>
+
+          <!-- Puppy Spa -->
+          <div class="card fade-in-up delay-300">
+            <h3 class="card-title text-center" style="font-size: 1.5rem;">Puppy Spa</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$55</span>
+              <span class="text-muted">/ flat rate</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">For puppies under 6 months. A gentle intro to grooming.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Tearless Puppy Bath</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gentle Blow Dry</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Light face, feet, & fanny trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim & Ear cleaning</li>
+            </ul>
+            <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Puppy Spa</a>
+          </div>
+        </div>
+
+        <!-- Medium Dogs -->
+        <div id="pricing-medium" class="grid grid-3" style="gap: 2rem; display: none;">
+          <!-- Basic Bath -->
+          <div class="card fade-in-up">
+            <h3 class="card-title text-center" style="font-size: 1.5rem;">Basic Bath</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$75</span>
+              <span class="text-muted">/ starting</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">Perfect for maintaining a healthy coat between full grooms.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Premium Shampoo & Conditioner</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Blow dry & 15-min brush out</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Ear cleaning</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gland expression (upon request)</li>
+            </ul>
+            <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Bath</a>
+          </div>
+
+          <!-- Full Groom -->
+          <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative; box-shadow: var(--shadow-lg); transform: translateY(-10px);">
+            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700; white-space: nowrap; z-index: 10;">MOST POPULAR</div>
+            <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 2rem;">Full Grooming</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$110</span>
+              <span class="text-muted">/ starting</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">A complete head-to-paw makeover tailored to your dog.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><strong><i class="fas fa-plus text-primary"></i> Everything in Basic Bath</strong></li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Custom Haircut & Styling</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Sanitary Trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Paw pad shave</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Breath freshener spray</li>
+            </ul>
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Full Groom</a>
+          </div>
+
+          <!-- Puppy Spa -->
+          <div class="card fade-in-up delay-400">
+            <h3 class="card-title text-center" style="font-size: 1.5rem;">Puppy Spa</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$65</span>
+              <span class="text-muted">/ flat rate</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">For puppies under 6 months. A gentle intro to grooming.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Tearless Puppy Bath</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gentle Blow Dry</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Light face, feet, & fanny trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim & Ear cleaning</li>
+            </ul>
+            <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Puppy Spa</a>
+          </div>
+        </div>
+
+        <!-- Large Dogs -->
+        <div id="pricing-large" class="grid grid-3" style="gap: 2rem; display: none;">
+          <!-- Basic Bath -->
+          <div class="card fade-in-up">
+            <h3 class="card-title text-center" style="font-size: 1.5rem;">Basic Bath</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$90</span>
+              <span class="text-muted">/ starting</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">Perfect for maintaining a healthy coat between full grooms.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Premium Shampoo & Conditioner</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Blow dry & 15-min brush out</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Ear cleaning</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gland expression (upon request)</li>
+            </ul>
+            <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Bath</a>
+          </div>
+
+          <!-- Full Groom -->
+          <div class="card fade-in-up delay-200" style="border: 2px solid var(--primary); position: relative; box-shadow: var(--shadow-lg); transform: translateY(-10px);">
+            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: 700; white-space: nowrap; z-index: 10;">MOST POPULAR</div>
+            <h3 class="card-title text-center" style="font-size: 1.5rem; margin-top: 2rem;">Full Grooming</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$135</span>
+              <span class="text-muted">/ starting</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">A complete head-to-paw makeover tailored to your dog.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><strong><i class="fas fa-plus text-primary"></i> Everything in Basic Bath</strong></li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Custom Haircut & Styling</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Sanitary Trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Paw pad shave</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Breath freshener spray</li>
+            </ul>
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Full Groom</a>
+          </div>
+
+          <!-- Puppy Spa -->
+          <div class="card fade-in-up delay-400">
+            <h3 class="card-title text-center" style="font-size: 1.5rem;">Puppy Spa</h3>
+            <div class="text-center" style="margin: 1rem 0 2rem;">
+              <span style="font-size: 3rem; font-weight: 800; color: var(--primary);">$80</span>
+              <span class="text-muted">/ flat rate</span>
+            </div>
+            <p class="text-center" style="margin-bottom: 1.5rem;">For puppies under 6 months. A gentle intro to grooming.</p>
+            <ul style="list-style: none; margin-bottom: 2rem; flex-grow: 1;">
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Tearless Puppy Bath</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Gentle Blow Dry</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Light face, feet, & fanny trim</li>
+              <li style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><i class="fas fa-check text-primary"></i> Nail trim & Ear cleaning</li>
+            </ul>
+            <a href="booking.html" class="btn btn-outline" style="width: 100%;">Book Puppy Spa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Spa Treatments -->
+  <section class="section" style="background-color: var(--surface-alt);">
+    <div class="container">
+      <div class="section-title fade-in-up text-center">
+        <span class="text-accent font-bold">A LA CARTE EXTRAS</span>
+        <h2>Spa Add-ons & Upgrades</h2>
+        <p>Customise your pet's experience with these targeted treatments.</p>
+      </div>
+      
+      <div class="grid grid-2">
+        <div class="card fade-in-up border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
+          <img src="assets/images/teeth-brushing.png" alt="Teeth Brushing" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
+            <h4 style="margin: 0;">Teeth Brushing</h4>
+            <p style="margin: 0; font-size: 0.875rem;">Enzymatic gel & breath spray</p>
+          </div>
+          <div style="font-weight: 800; font-size: 1.25rem;">$15</div>
+        </div>
+
+        <div class="card fade-in-up delay-100 border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
+          <img src="assets/images/de-shedding.png" alt="De-Shedding Treatment" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
+            <h4 style="margin: 0;">De-Shedding Treatment</h4>
+            <p style="margin: 0; font-size: 0.875rem;">Special shampoo & extra brushing</p>
+          </div>
+          <div style="font-weight: 800; font-size: 1.25rem;">$25</div>
+        </div>
+        
+        <div class="card fade-in-up delay-200 border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
+          <img src="assets/images/nail-grinding.png" alt="Nail Grinding" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
+            <h4 style="margin: 0;">Nail Grinding</h4>
+            <p style="margin: 0; font-size: 0.875rem;">Filing sharp edges smoothly</p>
+          </div>
+          <div style="font-weight: 800; font-size: 1.25rem;">$10</div>
+        </div>
+
+        <div class="card fade-in-up delay-300 border-none" style="display: flex; flex-direction: row; align-items: center; padding: 1.5rem;">
+          <img src="assets/images/blueberry-facial.png" alt="Blueberry Facial" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid var(--primary-light);">
+          <div style="flex-grow: 1; padding: 0 1.5rem;">
+            <h4 style="margin: 0;">Blueberry Facial</h4>
+            <p style="margin: 0; font-size: 0.875rem;">Relaxing tear-stain treatment</p>
+          </div>
+          <div style="font-weight: 800; font-size: 1.25rem;">$15</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="text-align: center;">
+    <div class="container fade-in-up" style="max-width: 800px; background: var(--surface); padding: 4rem 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color);">
+      <h2>Ready for a fresh start?</h2>
+      <p style="font-size: 1.25rem; margin-bottom: 2rem;">Book your mobile spa appointment in minutes. No credit card required to schedule.</p>
+      <a href="booking.html" class="btn btn-primary" style="font-size: 1.25rem; padding: 1rem 3rem;"><i class="fas fa-calendar-alt"></i> Book Your Session</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="padding: 4rem 0 2rem;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand" style="font-size: 1.25rem;"><i class="fas fa-paw"></i> <span>Paws & Bubbles</span></a>
+          <p class="footer-desc">Premium mobile dog grooming bringing a stress-free, luxurious spa experience right to your doorstep.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Account</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Login Dashboard</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="coming-soon.html">Pet Profiles</a></li>
+            <li><a href="coming-soon.html">Rewards</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone text-primary" style="margin-right: 0.5rem;"></i> (555) 123-4567</li>
+            <li><i class="fas fa-envelope text-primary" style="margin-right: 0.5rem;"></i> hello@pawsandbubbles.com</li>
+            <li><i class="fas fa-map-marker-alt text-primary" style="margin-right: 0.5rem;"></i> Serving the Greater Metro Area</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Paws & Bubbles Mobile Grooming. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function showSize(size) {
+      document.getElementById('pricing-small').style.display = 'none';
+      document.getElementById('pricing-medium').style.display = 'none';
+      document.getElementById('pricing-large').style.display = 'none';
+      document.querySelectorAll('.size-tab').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('tab-' + size).classList.add('active');
+      const target = document.getElementById('pricing-' + size);
+      target.style.display = 'grid';
+      target.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('appear'));
+    }
+  </script>
+</body>
+</html>
